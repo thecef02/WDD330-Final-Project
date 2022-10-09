@@ -1,0 +1,20 @@
+Schedule
+Week 1- 
+Day 1- Build basic HTML, CSS, of website. Build moderate JS to make sure links work.
+Day 2- Add dates to the booking process. Example: Book Room 100 Jan 06/2023, Book 100 Jan 07/2023. They allow for booking on those dates. Do not go above hotel room capacity- Example we have 100 rooms we cannot book more than 100 rooms. And we only have a certain number of each type of rooms- queen bed, king bed, and doubles. 
+Day 3- Prevent double booking. Using the example above preventing the booking when it is already booked. Also do not go above room capacity for those types of rooms following the same structure as above.
+
+Week 2
+Day 1- Build API/Find opensource API to use for the booking process. Make sure that it follows the same structure provided in the previous week. 
+Day 2- Build upon the API for google maps for locations of different hotels and their different booking arrangements. 
+Day 3- Putting it all together. Combine the previous work. Make sure that the website works for various locations, uses the opensource API for the booking process. Does not allow double booking and ensures that this process works for various dates. – If possible ensure that discounts are provided if dictated. 
+
+Week 3
+Day 1- Debugging- This is the last week, ensure that the debugging process is worked out. Fix any errors and bugs, test the website various times by all team members to ensure that it works properly.
+Day 2- Repeat day 1. This ensures that you caught onto any mistakes that were made and fix them as quickly as possible. 
+
+Day 3- Make a video with the team members demonstrating the project and how it works. 
+
+
+Link to Trello page
+https://trello.com/b/0s79lZCO/simple-project-board
