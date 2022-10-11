@@ -1,0 +1,129 @@
+/* large size */
+@media (min-width: 620px){
+    h1{font-size: 2rem;}   
+    h2{font-size: 1.75rem;} 
+    h3{font-size: 1.5rem;} 
+
+    header nav ul li a{font-size: 1.5rem;    }
+    
+    header div.company-name img{max-width: 100%;}
+    nav ul{display: flex;}
+    nav ul li{flex: 1 1 auto;}
+    header nav #hamburgerBtn {display: none;}
+    nav ul#primaryNav{display: flex;}
+    .sub-main-fields{
+        display: flex;
+    }
+    .main-fields{flex-wrap: wrap;}
+
+    .company-name img {max-height: 50px}
+    .contact p{
+        font-size: 12px;
+    }
+    .f-wrapper{
+        display: flex;
+    }
+
+
+    #form-make-reservation{
+        position: absolute;
+        top: 1rem;
+        margin-left: 0.5rem;
+        display: flex;
+        flex-direction: row;
+    }
+    .main-form picture img{
+        width: 100%;
+    }
+
+    .temple-info :nth-child(4){
+        flex: none;
+    }
+    .temple-info{        
+        visibility: hidden;
+        top: 7rem;
+    }
+    .temple-info img{
+        display:block;
+        margin: 1rem 0 0 2rem;
+        height: 100px;
+        border: 5px solid white;
+    }
+    .amenities, #adds-top,#five-days-weather{
+        display: flex;
+        flex-direction: row;
+
+    }
+    .amenities div {
+        width: 50%;}
+    .amenities ul{
+        font-size: 13px;
+        margin: 0 .5rem;
+    }
+    .mid-area{
+        display: flex;
+        flex-direction: row;
+        margin-top: 2rem;
+
+    }
+    #adds, #weather  {width: 50%;}
+    #adds-top div, #adds-bottom {
+        width: 50%;
+        background-color:#ffffff;
+        border: 10px solid #bbe6e4;
+    }
+    #adds-bottom{
+        margin-left: 25%;
+    } 
+
+    .weather-day{
+        width: 20%;
+        border-right: 1px solid #000;
+    }
+    #five-days-weather>:nth-child(3){
+        border-right: 1px solid #000;
+    }
+    #five-days-weather>:nth-child(5){
+        border-right: none ;
+    }
+    .weather-day h4{
+        margin: 0;
+    }
+    #five-days-weather>:nth-child(4), #five-days-weather>:nth-child(5){
+        margin-top: 0;
+        border-top: 0px;
+    }
+    #five-days-weather>:nth-child(1),#five-days-weather>:nth-child(2), #five-days-weather>:nth-child(3){
+        border-bottom: 0px;
+    }
+
+
+
+
+    .wedding ul{
+        line-height: 2rem;
+        max-width: 30%;
+        
+    }
+.wedding ul li{
+    font-size: 1rem;
+}
+
+
+
+    .bed-holder{
+        width: 30%;
+    }
+
+
+    .room-type{
+        width: 30%;
+    }
+
+    .bottom div{
+        width: 25%;
+    }
+
+
+
+}

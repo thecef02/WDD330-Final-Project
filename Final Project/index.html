@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WDD230 Final Project | The Temple Inn & Suites | Cristian Fernandez</title>
+  <meta name="description"
+    content="Final Project page for WDD230: Web Frontend Development at Brigham Young University-Idaho" />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?&family=Ubuntu:ital@1&display=swap&family=Source+Sans+Pro&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="css/small.css" />
+  <link rel="stylesheet" href="css/medium.css" />
+  <link rel="stylesheet" href="css/large.css" />
+
+</head>
+
+<body>
+  <header>
+    <div class="company-name">
+      <img src="images/logo.webp" alt="logo" />
+      <h1>The Temple Inn & Suites</h1>
+      <div>
+        <aside>dia y hora</aside>
+      </div>
+    </div>
+    <nav>
+
+      <ul id="primaryNav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="temple.html">Temples</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li>
+          <a href="https://www.facebook.com" target="_blank">
+            <img class="media" src="images/facebook.webp" alt="facebook" /></a>
+          <a href="http://www.Instagram.com" target="_blank">
+            <img class="media" src="images/instagram.webp" alt="instagram" /></a>
+        </li>
+      </ul>
+      <div id="hamburgerBtn">
+        <button>
+          <span>&#9776;</span>
+          <span>X</span>
+        </button>
+        <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.webp" alt="facebook" /></a>
+        <a href="http://www.Instagram.com" target="_blank">
+          <img class="media" src="images/instagram.webp" alt="instagram" /></a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="main-form">
+      <picture class="hero-picture">
+        <img src="images/main-pic-380.webp" alt="main picture" sizes="80vw" srcset="images/main-pic-380.webp 380w,
+                  images/main-pic-820.webp 610w,
+                  images/main-pic-1080.webp 820w">
+      </picture>
+      <form method="get" action="thankyou.html" id="form-make-reservation">
+        <fieldset class="main-fields">
+          <div class="sub-main-fields">
+            <div class="fields">
+              <span>Destination*</span>
+              <select id="destiantion" class="select-lbl" name="destiantion" required>
+                <option value="">--Select a Temple--</option>
+              </select>
+              <!-- <label class="lbl"><input type="" name="destination" required> </label> -->
+            </div>
+            <div class="fields">
+              <span>Check in*</span>
+              <label class="lbl"><input type="date" name="check-in" required> </label>
+            </div>
+          </div>
+          <div class="sub-main-fields">
+            <div class="fields">
+              <span>Check out*</span>
+              <label class="lbl"><input type="date" name="check-out" required> </label>
+            </div>
+
+            <div class="fields">
+              <span>Room / guest*</span>
+              <select class="select-lbl" name="room" required>
+                <option value="">--Select Room--</option>
+                <option value="1 Room 1 Guess">1 Room 2 Guess</option>
+                <option value="1 Room 2 Guess">1 Room 1 Guess</option>
+                <option value="1 Room 3 Guess">1 Room 3 Guess</option>
+                <option value="1 Room 4+ Guess">1 Room 4+ Guess</option>
+                <option value="2 Room 4 Guess">2 Room 4 Guess</option>
+                <option value="2 Room 4+ Guess">2 Room 4+ Guess</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+        <input type="submit" value="Search room" class="button-submit">
+
+      </form>
+      <div class="temple-info">
+        <h3><span id="temple-name"></span></h3>
+        <p><span id="temple-address"></span></p>
+        <p><span id="temple-phone"></span></p>
+        <img id="temple-img" src="" alt="Temple picture">
+      </div>
+    </section>
+    <h3 id="services">Specialized Services and Amenities</h3>
+    <section class="amenities">
+      <div>
+        <ul>
+          <li>Free access to changing rooms and bathroom facilities for temple patrons</li>
+          <li>Playroom and low-cost, short-term babysitting services for the children of patrons</li>
+          <li>Long-term stay accommodations in kitchenette suites for full-time temple missionaries</li>
+          <li>Temple history themed reception and sitting area</li>
+          <li>Wedding reception hall that can be easily customized with a simple catering menu</li>
+          <li>Kitchen access for food preparation and serving</li>
+          <li>Family search center that supports family search and ordinance work</li>
+        </ul>
+      </div>
+      <div>
+        <ul>
+          <li>Breakfast</li>
+          <li>Exercise/workout room</li>
+          <li>Indoor pool</li>
+          <li>WiFi high-speed internet access and smart TVs</li>
+          <li>Parking</li>
+          <li>Temple shuttle</li>
+          <li>Family history consultation and family ordinance card service</li>
+        </ul>
+      </div>
+    </section>
+    <div class="mid-area">
+    <section id="weather">
+
+      <!-- https://api.openweathermap.org/data/2.5/forecast?q=Orem,UT,US&appid=a1cdf4d637caf46a9288686067728afa&units=imperial -->
+      <h2 id="city-weather">American</h2>
+      <h3>Weather</h3>
+      <div id="five-days-weather">
+               
+      </div>
+
+    </section>
+    <section id="adds">
+      <div id="adds-top">
+        <div>
+          <span>&#128161;</span>
+          <h3>Fexible Rates</h3>
+          <p>We offer easy cancelation options.</p>
+        </div>
+        <div>
+          <span>&#128178;</span>
+          <h3>Best Rate Guarantee</h3>
+          <p>We'll match any lower available rate.</p>
+        </div>
+      </div>
+
+
+      <div id="adds-bottom">
+        <span>&#11088;</span>
+        <h3>Earn Free Nights</h3>
+        <p>Get a free night starting at just 3000 points.</p>
+      </div>
+    </section>
+  </div>
+    <section id="beds">
+      <div class="bed-holder">
+        <img class="bed-image" src="images/left.webp" alt="Picture of rooms">
+        <p class="bed-para">When you book direct, you get the lowest price.</p>
+        <div class="bed-button">Make reservation</div>
+      </div>
+      <div class="bed-holder">
+        <img class="bed-image" src="images/center.webp" alt="Picture of rooms">
+        <p class="bed-para">Check all our offers.</p>
+        <div class="bed-button">Make reservation</div>
+      </div>
+      <div class="bed-holder">
+        <img class="bed-image" src="images/right.webp" alt="Picture of rooms">
+        <p class="bed-para">Register now and complete two qualified stays, you'll get 10,000 bonus points.</p>
+        <div class="bed-button">Make reservation</div>
+      </div>
+
+    </section>
+  </main>
+  <footer>
+    <div class="f-wrapper">
+      <div class="f-logo">
+        <img src="images/logo.webp" alt="logo">
+      </div>
+      <div class="address">
+        <h2>The Temple Inn & Suites</h2>
+        <a href="https://goo.gl/maps/mwkH1ERpTsoVr86j7">
+          <p>4800 Montgomery Ln #300<br>
+            Bethesda, MD</p>
+        </a>
+      </div>
+      <div class="contact">
+        <p>Info@TempleInnSuites.com</p>
+        <p>+(555) 123-4567</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; <span id="year">2022</span> | Cristian Fernandez | Utah</p>
+      <p id="last-update">Last saved on: </p>
+    </div>
+  </footer>
+  <script src="js/scripts.js"></script>
+  <script src="js/main.js"></script>
+
+
+</body>
+
+</html>

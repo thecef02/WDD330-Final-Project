@@ -1,0 +1,164 @@
+[
+    {
+    "name": "Bountiful Temple",
+    "address": "640 S Bountiful Blvd",
+    "location": "Bountiful",
+    "zip": "84010-1394",
+    "phone": "(1) 801-296-2100",
+    "dedicated": "January 1995",
+    "closures": ["Saturday, 16 July 2022 (Limited Operations)", "Saturday, 23 July 2022", "Monday, 19 September 2022 - Monday, 3 October 2022", "Wednesday, 23 November 2022 - Thursday, 24 November 2022", "Friday, 23 December 2022 - Saturday, 24 December 2022", "Saturday, 31 December 2022", "Monday, 10 April 2023 - Monday, 24 April 2023", "Monday, 18 September 2023 - Monday, 2 October 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/bountiful-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/c8/57/c857b065af40a37ff00e58adf77c9620845757df/bountiful_temple_lds.jpeg"
+    },
+    {
+    "name": "Brigham City Temple",
+    "address": "250 S Main St",
+    "location": "Brigham City",
+    "zip": "84302-2560",
+    "phone": "(1) 435-695-2170",
+    "dedicated": "September 2012",
+    "closures": ["Monday, 8 August 2022 - Monday, 22 August 2022", "Friday, 9 September 2022 (Limited Operations)", "Saturday, 10 September 2022", "Saturday, 1 October 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022 (Limited Operations)", "Monday, 27 February 2023 - Monday, 13 March 2023", "Saturday, 1 April 2023", "Tuesday, 4 July 2023", "Monday, 7 August 2023 - Monday, 21 August 2023", "Friday, 8 September 2023 (Limited Operations)", "Saturday, 9 September 2023", "Saturday, 30 September 2023", "Wednesday, 22 November 2023 (Limited Operations)", "Thursday, 23 November 2023", "Saturday, 23 December 2023", "Saturday, 30 December 2023 (Limited Operations)"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/brigham-city-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/93/92/9392e6adee3d1aa025548de1a852a27ad8ea40f4/brigham_city_utah_temple_dawn.jpeg"
+    },
+    {
+    "name": "Cedar City Temple",
+    "address": "280 South Cove Dr",
+    "location": "Cedar City",
+    "zip": "84720",
+    "phone": "(1) 435-572-4150",
+    "dedicated": "December 2017",
+    "closures": ["Saturday, 1 October 2022", "Monday, 10 October 2022 - Monday, 24 October 2022", "Wednesday, 23 November 2022 - Thursday, 24 November 2022", "Saturday, 24 December 2022 - Sunday, 25 December 2022", "Saturday, 31 December 2022 - Sunday, 1 January 2023", "Saturday, 1 April 2023", "Monday, 10 April 2023 - Monday, 24 April 2023", "Tuesday, 4 July 2023", "Saturday, 30 September 2023", "Monday, 9 October 2023 - Monday, 23 October 2023", "Wednesday, 22 November 2023 - Thursday, 23 November 2023", "Saturday, 23 December 2023 - Monday, 25 December 2023", "Sunday, 31 December 2023 - Tuesday, 2 January 2024"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/cedar-city-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/b2/89/b2891eb1787414ec6995a32c42d03981732c2d6a/cedar_city_utah_temple_exterior.jpeg"
+    },
+    {
+    "name": "Draper Temple",
+    "address": "14065 Canyon Vista Ln",
+    "location": "Draper",
+    "zip": "84020-5626",
+    "phone": "(1) 801-576-4240",
+    "dedicated": "March 2009",
+    "closures": ["Monday, 29 August 2022 - Monday, 12 September 2022", "Saturday, 1 October 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022", "Monday, 23 January 2023 - Monday, 6 February 2023", "Monday, 24 July 2023 - Monday, 7 August 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/draper-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/e8/f7/e8f766dfe3a7faff387d2e698ab0cdf19b76a191/draper_utah_temple.jpeg"
+    },
+    {
+    "name": "Jordan River Temple",
+    "address": "10200 S Temple Drive",
+    "location": "South Jordan",
+    "zip": "84095-8814",
+    "phone": "(1) 801-254-3003",
+    "dedicated": "November 1981",
+    "closures": ["Saturday, 1 October 2022", "Monday, 31 October 2022 - Monday, 14 November 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022 (Limited Operations)", "Monday, 8 May 2023 - Monday, 22 May 2023", "Monday, 30 October 2023 - Monday, 13 November 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/jordan-river-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/e5/54/e5546a3599c023ba83a4d751fb6fc196b5ab6ada/jordan_river_temple_exterior_images.jpeg"
+    },
+    {
+    "name": "Logan Temple",
+    "address": "175 N 300 E",
+    "location": "Logan",
+    "zip": "84321-4720",
+    "phone": "(1) 435-752-3611",
+    "dedicated": "May 1884",
+    "closures": ["Saturday, 1 October 2022", "Monday, 3 October 2022 - Monday, 17 October 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022 (Limited Operations)", "Monday, 13 February 2023 - Monday, 27 February 2023", "Saturday, 1 April 2023", "Tuesday, 4 July 2023", "Saturday, 30 September 2023", "Monday, 2 October 2023 - Monday, 16 October 2023", "Wednesday, 22 November 2023 (Limited Operations)", "Thursday, 23 November 2023", "Saturday, 23 December 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/logan-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/07/66/0766f32cfa9c69e9c838361d874aeb819983139a/logan_temple_lds.jpeg"
+    },
+    {
+    "name": "Monticello Temple",
+    "address": "365 N 200 W",
+    "location": "Monticello",
+    "zip": "84535",
+    "phone": "(1) 435-587-3500",
+    "dedicated": "July 1998",
+    "closures": ["Saturday, 23 July 2022", "Saturday, 1 October 2022", "Monday, 31 October 2022 - Monday, 6 March 2023", "Monday, 31 July 2023 - Monday, 14 August 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/monticello-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/13/5b/135bf7357b0410009a6889d20117f39eb467c5e2/monticello_utah_temple.jpeg"
+    },
+    {
+    "name": "Mount Timpanogos Temple",
+    "address": "742 N 900 E",
+    "location": "American Fork",
+    "zip": "84003-9124",
+    "phone": "(1) 801-763-4540",
+    "dedicated": "October 1996",
+    "closures": ["Saturday, 1 October 2022", "Monday, 7 November 2022 - Tuesday, 22 November 2022", "Wednesday, 23 November 2022 - Thursday, 24 November 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022", "Saturday, 1 April 2023", "Monday, 8 May 2023 - Monday, 22 May 2023", "Tuesday, 4 July 2023", "Saturday, 7 October 2023", "Monday, 6 November 2023 - Tuesday, 21 November 2023", "Wednesday, 22 November 2023 - Thursday, 23 November 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/mount-timpanogos-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/38/f4/38f4f0d08d11f9aa517fb57f68bbf7f95f1de7ed/mount_timpanogos_utah_temple.jpeg"
+    },
+    {
+    "name": "Ogden Temple",
+    "address": "350 22nd St",
+    "location": "Ogden",
+    "zip": "84401-1487",
+    "phone": "(1) 801-621-6880",
+    "dedicated": "January 1972",
+    "closures": ["Monday, 29 August 2022 - Monday, 12 September 2022", "Saturday, 1 October 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022 (Limited Operations)", "Saturday, 31 December 2022", "Monday, 27 March 2023 - Monday, 10 April 2023", "Saturday, 20 May 2023 (Limited Operations)", "Tuesday, 4 July 2023", "Monday, 28 August 2023 - Monday, 11 September 2023", "Saturday, 7 October 2023", "Tuesday, 31 October 2023 (Limited Operations)", "Thursday, 23 November 2023 (Limited Operations)", "Friday, 24 November 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/ogden-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/cc/4e/cc4e939403a0c780b8a4095314a1ccdae0c51372/ogden_utah_temple.png"
+    },
+    {
+    "name": "Oquirrh Mountain Temple",
+    "address": "11022 S 4000 W",
+    "location": "South Jordan",
+    "zip": "84009-5797",
+    "phone": "(1) 801-878-3800",
+    "dedicated": "August 2009",
+    "closures": ["Saturday, 23 July 2022", "Monday, 12 September 2022 - Monday, 26 September 2022", "Saturday, 1 October 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022", "Monday, 13 March 2023 - Monday, 27 March 2023", "Monday, 11 September 2023 - Monday, 25 September 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/oquirrh-mountain-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/12/79/1279ca967a843a350968560551d6cf5aac5e12da/oquirrh_mountain_utah_temple.jpeg"
+    },
+    {
+    "name": "Payson Temple",
+    "address": "1494 S 930 W",
+    "location": "Payson",
+    "zip": "84651",
+    "phone": "(1) 801-754-4949",
+    "dedicated": "June 2015",
+    "closures": ["Saturday, 1 October 2022", "Monday, 10 October 2022 - Monday, 17 October 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Friday, 23 December 2022 (Limited Operations)", "Saturday, 24 December 2022", "Saturday, 31 December 2022 (Limited Operations)", "Monday, 27 March 2023 - Monday, 10 April 2023", "Tuesday, 4 July 2023", "Saturday, 30 September 2023", "Monday, 9 October 2023 - Monday, 23 October 2023", "Wednesday, 22 November 2023 (Limited Operations)", "Thursday, 23 November 2023", "Saturday, 23 December 2023 (Limited Operations)", "Saturday, 30 December 2023 (Limited Operations)"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/payson-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/5c/37/5c3729536739cb999301b02dd6cde0804509d5f6/payson_utah_temple.jpg"
+    },
+    {
+    "name": "Provo City Center Temple",
+    "address": "50 South University Ave",
+    "location": "Provo",
+    "zip": "84601",
+    "phone": "(1) 801-343-2700",
+    "dedicated": "March 2016",
+    "closures": ["Saturday, 1 October 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Monday, 28 November 2022 - Monday, 12 December 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022", "Saturday, 1 April 2023", "Monday, 19 June 2023 - Tuesday, 4 July 2023", "Saturday, 7 October 2023", "Wednesday, 22 November 2023 (Limited Operations)", "Thursday, 23 November 2023", "Monday, 27 November 2023 - Monday, 11 December 2023", "Saturday, 23 December 2023 (Limited Operations)", "Saturday, 30 December 2023 (Limited Operations)", "Saturday, 6 April 2024"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/provo-city-center-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/57/18/5718c8b9c5a103646c0bd22554cb268b88986f05/provo_city_center_temple_exterior.jpg"
+    },
+    {
+    "name": "Provo Temple",
+    "address": "2200 Temple Hill Dr",
+    "location": "Provo",
+    "zip": "84604-1775",
+    "phone": "(1) 801-375-5775",
+    "dedicated": "February 1972",
+    "closures": ["Monday, 4 July 2022 - Monday, 18 July 2022", "Monday, 25 July 2022", "Monday, 5 September 2022", "Saturday, 1 October 2022", "Wednesday, 23 November 2022 (Limited Operations)", "Thursday, 24 November 2022", "Monday, 19 December 2022 - Monday, 2 January 2023", "Saturday, 1 April 2023", "Monday, 29 May 2023", "Monday, 3 July 2023 - Monday, 17 July 2023", "Monday, 24 July 2023", "Monday, 4 September 2023", "Saturday, 7 October 2023", "Wednesday, 22 November 2023 (Limited Operations)", "Thursday, 23 November 2023", "Monday, 18 December 2023 - Monday, 1 January 2024"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/provo-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/a4/bd/a4bdfa4789b3337882a9791e741f5452a9d5860b/provo_temple_lds.jpeg"
+    },
+    {
+    "name": "Vernal Temple",
+    "address": "420 W 200 S",
+    "location": "Vernal",
+    "zip": "84078-2536",
+    "phone": "(1) 435-789-3220",
+    "dedicated": "November 1997",
+    "closures": ["Monday, 19 September 2022 - Monday, 3 October 2022", "Wednesday, 23 November 2022 - Thursday, 24 November 2022", "Saturday, 24 December 2022", "Saturday, 31 December 2022", "Monday, 17 April 2023 - Monday, 1 May 2023", "Monday, 18 September 2023 - Monday, 2 October 2023"],
+    "website": "https://www.churchofjesuschrist.org/temples/details/vernal-utah-temple?lang=eng",
+    "imageUrl": "https://assets.ldscdn.org/41/0a/410a29915aac112f15a293d963abfadee117776f1068523/vernal_temple_lds.jpeg"
+    }
+]
+
+
+
+
+
+
+
+

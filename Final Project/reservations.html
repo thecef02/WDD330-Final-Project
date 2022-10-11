@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WDD230 Final Project | The Temple Inn & Suites | Cristian Fernandez</title>
+  <meta name="description"
+    content="Final Project page for WDD230: Web Frontend Development at Brigham Young University-Idaho" />
+
+  <!-- fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?&family=Ubuntu:ital@1&display=swap&family=Source+Sans+Pro&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" href="images/favicon.ico">
+  <!-- Styles -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="css/small.css" />
+  <link rel="stylesheet" href="css/medium.css" />
+  <link rel="stylesheet" href="css/large.css" />
+
+</head>
+
+<body>
+  <header>
+    <div class="company-name">
+      <img src="images/logo.webp" alt="logo" />
+      <h1>The Temple Inn & Suites</h1>
+      <div>
+        <aside>dia y hora</aside>
+      </div>
+    </div>
+    <nav>
+
+      <ul id="primaryNav">
+        <li class="active"><a href="index.html">Home</a></li>
+        <li><a href="reservations.html">Reservations</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="temple.html">Temples</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+        <li>
+          <a href="https://www.facebook.com" target="_blank">
+            <img class="media" src="images/facebook.webp" alt="facebook" /></a>
+          <a href="http://www.Instagram.com" target="_blank">
+            <img class="media" src="images/instagram.webp" alt="instagram" /></a>
+        </li>
+      </ul>
+      <div id="hamburgerBtn">
+        <button>
+          <span>&#9776;</span>
+          <span>X</span>
+        </button>
+        <a href="https://www.facebook.com" target="_blank"><img src="images/facebook.webp" alt="facebook" /></a>
+        <a href="http://www.Instagram.com" target="_blank">
+          <img class="media" src="images/instagram.webp" alt="instagram" /></a>
+      </div>
+    </nav>
+  </header>
+  <main>
+
+    <section id="sec-reservation">
+      <form method="get" action="thankyou.html" id="form-reservation">
+        <fieldset class="main-fieldss">
+          <legend>Make a reservation</legend>
+          <label class="lbl">Select Nearby Location*
+            <select id="destiantion" class="select-lbl" name="destiantion" required>
+              <option value="">--Select a Temple--</option>
+            </select> 
+          </label>
+          <label class="lbl">Check in*<input type="date" name="check-in" required> </label>
+          <label class="lbl">Check out*<input type="date" name="check-out" required> </label>
+          <label class="lbl">Room / guest*
+            <select class="select-lbl" name="room" required>
+              <option value="">--Select Room--</option>
+              <option value="1 Room 1 Guess">1 Room 2 Guess</option>
+              <option value="1 Room 2 Guess">1 Room 1 Guess</option>
+              <option value="1 Room 3 Guess">1 Room 3 Guess</option>
+              <option value="1 Room 4+ Guess">1 Room 4+ Guess</option>
+              <option value="2 Room 4 Guess">2 Room 4 Guess</option>
+              <option value="2 Room 4+ Guess">2 Room 4+ Guess</option>
+            </select></label>
+    
+
+        </fieldset>
+        <fieldset>
+          <legend>Personal Information</legend>
+          <label class="lbl">First Name* <input type="text" name="fname" required> </label>
+          <label class="lbl">Last Name* <input type="text" name="lname" required> </label>
+          <label class="lbl">Email* <input type="email" name="email" placeholder="someone@provider.com" required>
+          </label>
+          <label class="lbl">Phone* <input type="tel" name="phone" pattern="[0-9]{,}" placeholder="1235551234" required>
+          </label>
+          <!-- <label class="lbl">Business name* <input type="text" name="businessname" required> </label> -->
+
+          <label><input type="text" name="datetime" id="datetime-loaded" hidden> </label>
+        </fieldset>
+        <fieldset>
+          <label class="lbl lbl-desc">Special accommodations and comments.
+            <textarea class="lbl lbl-desc" id="txt" name="Business Description" rows="5" cols="65"
+              maxlength="500"></textarea>
+          </label>
+        </fieldset>
+        <input type="submit" value="Book Now" class="button-reservation">
+
+      </form>
+
+
+
+    </section>
+  </main>
+  <footer>
+    <div class="f-wrapper">
+      <div class="f-logo">
+        <img src="images/logo.webp" alt="logo">
+      </div>
+      <div class="address">
+        <h2>The Temple Inn & Suites</h2>
+        <a href="https://goo.gl/maps/mwkH1ERpTsoVr86j7">
+          <p>4800 Montgomery Ln #300<br>
+            Bethesda, MD</p>
+        </a>
+      </div>
+      <div class="contact">
+        <p>Info@TempleInnSuites.com</p>
+        <p>+(555) 123-4567</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; <span id="year">2022</span> | Cristian Fernandez | Utah</p>
+      <p id="last-update">Last saved on: </p>
+    </div>
+  </footer>
+  <script src="js/scripts.js"></script>
+
+
+
+</body>
+
+</html>

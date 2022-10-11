@@ -1,0 +1,770 @@
+
+:root {
+    /* change the values below to your colors from your palette */
+    --primary-color: #2f4858;
+    --secondary-color: #fef19a;
+    --bg-color: #bbe6e4;
+    --txt-color: #f28969;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+body{
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: var(--bg-color);
+    font-family:'Ubuntu', 'Source Sans Pro', sans-serif ;
+}
+
+aside{
+    display:none;
+}
+h1,h2,h3,h4{
+    font-family: 'Nunito', 'Source Sans Pro';
+}
+h1{
+    font-size: 1.3rem;
+    max-width: 80%;
+    display: inline-block;
+    text-align: center;
+    margin-bottom: 0;
+}
+header, main, footer{
+    margin: auto;
+    max-width: 1080px;
+    min-width: 260px;
+    text-align: center;
+}
+
+/* .company-name {
+    background-color: #bbe6e4;
+} */
+.company-name img {
+    display:flex;
+    position:absolute;
+    top: 1px;
+    margin-top: 10px;
+    max-height: 30px;
+
+}
+
+nav {
+	background-color: var(--secondary-color);
+	text-align: left;
+    box-shadow: 0 2px 12px rgb(92, 88, 88);
+    
+    width: 100%;
+}
+nav ul {
+    list-style-type: none;
+}
+nav ul li a{
+    display: block;
+    color: var(--txt-color);
+    text-align: center;
+    text-decoration: none;
+    font-size: 1.3rem;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+nav ul li a :nth-child(1){
+    border-top: 1px solid rgba(0,0,0,0.2);
+}
+
+nav ul li a:hover{background-color: #2f4858;}
+header nav button{
+
+    margin: .2rem 2vw;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    color: #000;
+}
+
+#hamburgerBtn img{
+    max-width: 36px;
+    max-height: 36px;
+    border-radius: 10px;
+    padding: 0px 5px;
+}
+header nav ul li:nth-child(6) img{
+    max-height: 35px;
+    border-radius: 10px;
+}
+header nav ul li:nth-child(6) {
+    display: flex;
+    justify-content: end;
+    align-content: center;
+}
+header nav ul li:nth-child(6) a{
+    display: flex;
+    text-align: center;
+}
+header nav ul {display: none;}
+header nav ul.open {display: block;}
+#hamburgerBtn a{display:inline-block; }
+#hamburgerBtn button span:nth-child(1){display: block;}
+#hamburgerBtn button span:nth-child(2){display: none;}
+#hamburgerBtn.open button span:nth-child(1){display: none;}
+#hamburgerBtn.open button span:nth-child(2){display: block;}
+#hamburgerBtn.open a{display: none;}
+
+
+
+/* Main css */
+
+.main-fields{
+    display: block;
+    /* flex-direction: row; */
+    border: none;
+    width: 100%;
+}
+.main-form{
+    position: relative;
+
+}
+.main-form picture img{
+    width: 100%;
+}
+#form-make-reservation{
+    position: absolute;
+    top: 1rem;
+    margin-left: 0.5rem;
+    display: block;
+    /* flex-direction: row; */
+}
+.button-submit{
+    background-color: var(--primary-color);
+    color: #fef19a;
+    width: 8.5rem;
+    min-height: 2.5rem;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #000;
+    border-top: 1px solid rgba(255,255,255,0.8);
+    border-left: 1px solid rgba(255,255,255,0.8);
+}
+.fields{
+    display: block;
+    /* flex-direction: column;
+    align-items: flex-start; */
+    margin-right: 1rem;
+    text-align: left;
+    background-color: #000;
+    border-radius: 5px 5px 0px 0px;
+    
+}
+.fields span{
+    font-size: .7rem;
+    color: rgba(255,255,255,0.8);
+    margin-left: 0.3rem;
+}
+.fields .lbl input,.fields .select-lbl{
+    width: 9rem;
+    min-height: 2.5rem;
+    font-size: .9rem;
+    font-family: 'Source Sans Pro', 'sans-serif','currier';
+}
+.fields{
+    text-align: right;
+    margin-top: 0.2rem;
+}
+
+
+.temple-info h3, .temple-info p{
+    color: #000;
+}
+.temple-info{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 4px;
+}
+.temple-info p{margin-left: 10px;}
+.temple-info img{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*   sevices  */
+#service-nav{
+    margin-top: 2rem;
+}
+#services{
+    margin-top: 1rem;
+    align-items: center;
+}
+#services h1{
+    margin-bottom: 1rem;
+}
+.amenities{
+    display: block;
+    margin: 0 3rem;
+    text-align: left;
+}
+.amenities ul, .amenities-list ul{
+    margin-top: 2rem;
+    background-color: #ddd;
+    border: 2px solid #888;
+    border-radius: 5px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,.5);
+}
+.amenities ul li, .amenities-list ul li{
+    font-size: 14px;
+    text-decoration:dotted;
+    margin: .1rem 1.4rem;
+}
+.amenities-list{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    /* flex-wrap: wrap; */
+    width: 90%;
+    margin-left: 1rem;
+    text-align: left;
+}
+.amenities-list ul{
+    justify-content: space-around;
+    width: 30%;
+}
+
+
+/*    weding  */
+.wedding{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* position: absolute; */
+
+}
+
+
+
+.wedding img{
+    width: 100%;}
+.wedding ul{
+    margin-top: .1rem;
+    margin-left: 1rem;
+    line-height: 2rem;
+    width: 100%;
+    background-color: var(--txt-color);
+    
+}
+.wedding ul li{
+    list-style: none;
+    border-bottom: 1px solid #bbb ;
+}
+.wedding ul li:hover{
+    background-color: #2f4858;
+    color: mintcream;
+}
+.wedding-right-side{
+    /* position: absolute; */
+    /* align-self: flex-end; */
+    margin: 2rem 1.5rem;
+    width: 100%;
+    text-align: left;
+    
+}
+.wedding-right-side h4{
+    margin-bottom: 2rem;
+}
+.wedding-right-side p{
+    height: 3rem;
+    margin: 0 0 .5rem 1rem;
+    border-bottom: 1px solid var(--txt-color);
+    
+}
+
+
+.mid-area{
+    display: block;
+}
+
+
+
+#weather{
+    width: 100%;
+    padding-top: 1rem;
+}
+#five-days-weather{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+    align-items: stretch;
+    border: 1px dotted #000;
+}
+.weather-day {
+    width: 33%;
+    border-right: 1px solid #000;
+}
+#five-days-weather>:nth-child(3){
+    border-right: none ;
+}
+#five-days-weather>:nth-child(4), #five-days-weather>:nth-child(5){
+    margin-top: 1rem;
+    border-top: 1px dotted #000;
+}
+#five-days-weather>:nth-child(1),#five-days-weather>:nth-child(2), #five-days-weather>:nth-child(3){
+    border-bottom: 1px dotted #000;
+}
+.weather-day p{
+    margin-block-end: 0;
+    margin-block-start: 0;
+    margin: 0;
+    font-size: 10px;
+}
+.weather-day h5{color: var(--primary-color);}
+.weather-day h4{
+    padding-top: .5rem;
+}
+
+#adds-top div, #adds-bottom {
+    width: 100%;
+    background-color:#ffffff;
+    border: 10px solid #bbe6e4;
+}
+
+#beds{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 3rem 0;
+}
+.bed-holder{
+    margin: .5rem;
+
+    background-color:white;
+    border-radius: 3px;
+    border: 1px solid rgba(0,0,0,0.2);
+    text-align: center;
+}
+.bed-image{
+    width: 96%;
+    margin-top: 2%;
+    border-radius: 3px;
+}
+.bed-button{
+    margin: 1rem 2.5rem;
+    background-color: #2f4858;
+    padding: .6rem 0;
+    color: #fef19a;
+}
+.bed-para{
+    font-size: 14px;
+    margin: 0 .3rem;
+    height: 3rem;
+    
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+/*   temple.html  */ 
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,  minmax(295px, 1fr));
+    margin: 2rem 0;
+    position: relative;
+}
+.grid section {
+    margin: 0.25rem;
+    padding: 0.35rem;
+    background-color: #bbb;
+    border: 1px solid #212480;
+    border-radius: 3px;
+    box-shadow: 2px 3px 5px rgba(0,0,0,.5);
+}
+.grid section > p {
+    min-height: 10px;
+    margin: 0;
+    /* font-family:'Source Sans Pro', sans-serif ; */
+    font-size: .8rem;
+}
+.grid section div{
+    display: flex;
+}
+.grid section div h4{
+    margin: auto;
+    font-size: 1.2rem;
+}
+.grid .imglogo {
+    margin: 0.8rem ;
+    max-width: 380px;
+    box-shadow: 0 0 30px #777;
+    height: 100px;
+    border: 1px solid #333;
+}
+.float-div{
+    width: 100px;
+    height: 100px;
+    background-color: #000;
+    position: absolute;
+    margin-left: 5rem;
+    margin-top: 4rem;
+}
+.grid details summary{
+    font-size: 12px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+.grid details p{
+    font-size: 14px;
+}
+.grid .imglike{
+    width: 20px;
+    margin-left: 2rem;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+/*    reservation   */
+#form-reservation fieldset{
+    margin: 2rem 0;
+    border: 1px solid #445ba9;
+    border-radius: 10px;
+    padding: .5rem 2%;
+}
+#form-reservation legend{
+    color:#445ba9;
+    font-weight: 800;
+    margin-left: 1rem;
+    text-align: left;
+    padding: 0 .5rem;
+}
+#form-reservation label.lbl{
+    display:block;
+    padding-top: .8rem;
+    font-weight: 600;
+    text-align: left;
+}
+#form-reservation label.lbl input, #form-reservation label.lbl textarea, 
+#form-reservation label.lbl select{
+    display: block;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: 1px solid #999;
+    padding: .75rem;
+    width: 100%;
+    max-width: 20rem;
+    background-color: var(--secondary-color);
+}
+#form-reservation label.radio{
+    display: block;
+    padding: .75rem 0;
+    text-align: left;
+    font-weight: 600;
+}
+#form-reservation label.lbl input:required {
+    border-left: solid 6px red;  
+}
+#form-reservation label.lbl input:required:valid{
+    border-left: solid 6px green;  
+}
+#form-reservation label.lbl-desc input{
+    padding: 3rem;
+}
+#form-reservation{
+    max-width: 29rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+#sec-reservation{
+    min-height: 8rem;
+    margin-bottom: 4rem;
+}
+.button-reservation{
+    margin: 2rem 0;
+    position:relative;
+    padding: 0 5% 0 5%;
+}
+
+.tks-sec{
+    margin-top: 1rem;
+    align-items: center;
+    padding: 5rem 0;
+}
+#form-reservation label.tks-join{
+    font-size: 40px;
+    margin-top: 2rem;
+    color: #4962a5;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  thankyou.html  */ 
+#tks{
+
+    margin: 3rem 0;
+}
+/* footer Css */
+
+.f-wrapper{
+    display: block;
+    flex-direction: row;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    margin: 1rem 0;
+    box-shadow: 0 2px 12px rgb(92, 88, 88);
+}
+.f-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 25%;
+}
+.address{
+    min-width: 50%;
+}
+.contact{
+    min-width: 25%;
+    padding-top: 1rem;
+    font-size: .6rem;
+}
+.f-wrapper img{
+    max-height: 30px;
+}
+.copyright{
+    margin: 3rem 0;
+}
+.copyright p{
+    background-color: var(--txt-color);
+    width: 50%;
+    margin: auto;
+    border-radius: 3px;
+}
+
+
+
+
+
+
+
+
+
+
+/*      missionary     */
+.all-rooms, .room-rating{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.room-type{
+    border: 1px solid #bbb;
+    width: 98%;
+    margin: 2% 1%;
+    background-color: #fff;
+    font-size: 14px;
+}
+.room-img{
+    width: 100%;
+    margin: 0;
+}
+
+.room-type h3, .room-stars{
+    text-align: left;
+    margin: 0 .5rem ;
+}
+
+.room-rating{
+    margin: .4rem .5rem;
+}
+.rating{
+    background-color: #2e35f3;
+    padding: 0 .3rem;
+    border-radius: 3px;
+    color: #bbb;
+    font-size: 10px;
+    margin-right: .5rem;
+}
+.rating span{
+    font-size: 14px;
+    color: white;
+}
+.room-reviews{
+    color: #2e35f3;
+    font-weight: 600;
+    margin-right: .5rem;
+}
+.reviews-num span{
+    margin-right: .5rem;
+}
+.reviews-num{color: #888;}
+
+.room-distance, .room-desc{
+    margin: .5em .8rem;
+    text-align: left;
+}
+.room-desc{
+    color: #888;
+}
+.room-price{
+    text-align: right;
+    margin-right: 1rem;
+    font-weight: 700;
+}
+.room-price span{
+    font-size: 1.2rem;
+    color: #2e35f3;
+}
+.room-check{
+    display: flex;
+    justify-content: space-between;
+    
+    position: relative;
+    width: 100%;
+    margin: auto;
+    padding-right: 1rem;
+    
+}
+.room-check div{
+    padding: .5rem .5rem;
+    text-align: center;
+    width: 150px;
+    margin-bottom: .7rem;
+    background-color:var(--secondary-color);
+    border-radius: 5px;
+
+}
+.room-check a{
+    margin: 0 0 .5rem .5rem;
+    text-decoration: none;
+    background-color: #444;
+    padding: .5rem .8rem;
+    border-radius: 3px;
+    color: #bbb;
+}
+
+/*         About us         */
+
+.backgrn{
+    background-color: #888;
+    margin-top: 2rem;
+    padding-top: 1rem;
+}
+
+
+.buttons{
+    display: block;
+    flex-direction: row;
+    justify-content: center;
+    position: relative;
+    height: 100px;
+    margin: 2rem;
+    padding: 2rem 0;
+}
+
+.buttons div{
+    /* margin-left: 1rem; */
+    text-align: left;
+    height: 20px;
+    padding: .4rem 0;
+}
+.register{
+    margin-right: 2rem;
+    width: 200px;
+}
+.register a {
+    color: white;
+    text-decoration: none;
+    background-color: #333;
+    padding: .5rem 1rem;
+    border: 2px solid white;
+    
+}
+.buttons-help, .pointer{
+    visibility: hidden;
+}
+
+.buttons-help span{
+    padding: .5rem;
+    color: white;
+    background-color: rgba(15,41,77,0.7);
+}
+
+
+.bottom{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #888;
+    justify-content: space-around;
+    padding-top: 1rem;
+}
+.bottom h4{
+    text-align: left;
+    margin-left: 1rem;
+}
+.bottom div{
+    width: 100%;
+}
+.bottom ul{
+    list-style: none;
+    text-align: left;
+    font-size: 12px;
+    margin: 1rem 2rem;
+    
+}
+.bottom ul li a{
+    text-decoration: none;
+    color: #2e35f3;
+}
+.bottom ul li img{
+    width: 18px;
+    border-radius: 6px;
+}
+
+
+
+
+
+
+
+
+
+

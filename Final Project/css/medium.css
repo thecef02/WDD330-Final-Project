@@ -1,0 +1,112 @@
+/* medium size   368px*/
+@media (min-width: 23em){
+    h1{font-size: 1.5rem;}   
+    h2{font-size: 1.5rem;} 
+    h3{font-size: 1.25rem;}
+    ul{font-size: 1.2rem;}
+
+    header nav ul li a{
+        border: none;
+        font-size: 1.1rem;
+    }
+    /* .company-name h1{width: 100%;} */
+    
+    .company-name aside{display: contents;}
+    .company-name div{
+        display: block;
+        text-align: end;
+        font-size: 0.7rem;
+        align-items:flex-end;
+    }
+    header nav ul li a{
+        border: none;
+        font-size: 1.1rem;
+    }
+
+
+    .f-wrapper img{
+        max-height: 50px;
+    }
+    .main-fields{
+        display: flex;
+        flex-direction: row;
+        /* flex-wrap: wrap; */
+        border: none;
+        /* width: 100%; */
+    }
+    .fields .lbl input,.fields .select-lbl{
+        min-width: 8rem;
+    }
+    .fields{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-right: 1rem;
+    }
+
+
+    .temple-info h3, .temple-info p{
+        color: #08f850;
+    }
+
+    .temple-info{
+        position: absolute;
+        top: 10rem;
+        margin-left: 2rem;
+        margin-top: 2rem;
+    }
+
+    .amenities ul{
+        font-size: 12px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}       
+
+
+
+
+
+@media (min-width: 450px){
+    h1{font-size: 1.5rem;}
+
+    .contact{font-size: 14px;}
+
+    .bed-holder{
+        width: 45%;
+    }
+    .wedding {
+        width: auto;
+        flex-wrap: nowrap;
+    }
+    .wedding ul li {font-size: 1rem;}
+    .wedding-right-side{
+        width: auto;
+    }
+
+    .room-type{
+        width: 46%;
+    }
+    .bottom div{
+        width: 46%;
+    }
+    .buttons{
+        display: flex;
+    }
+    .buttons-help, .pointer{
+        visibility:visible;
+    }
+}
