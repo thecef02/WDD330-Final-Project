@@ -1,27 +1,24 @@
-/*   place date on top right corner of the page */
-const datefield = document.querySelector("aside");
-const now = new Date();
-const fulldate = new Intl.DateTimeFormat("en-US", { dateStyle: "full" }).format(now);
-const rndNum = Math.floor(Math.random() * 14) + 1;
-let compareRndnum = 0
-datefield.innerHTML = `<em>${fulldate}</em>`;
-let templeData = {}
 
+
+
+let templeData = {}
+let compareRndnum = 0
+const rndNum = Math.floor(Math.random() * 14) + 1; // to get a random number of temples.
 /*  humburger menu  */
-function toggleMenu() {
-    document.getElementById("primaryNav").classList.toggle("open");
-    document.getElementById("hamburgerBtn").classList.toggle("open");
-}
-const x = document.getElementById("hamburgerBtn");
-x.onclick = toggleMenu;
+// function toggleMenu() {
+//     document.getElementById("primaryNav").classList.toggle("open");
+//     document.getElementById("hamburgerBtn").classList.toggle("open");
+// }
+// const x = document.getElementById("hamburgerBtn");
+// x.onclick = toggleMenu;
 
 
 //footer show last modified.
-const lastModDate = new Date(document.lastModified);
-let strLMD = 'Last updated on: ' + lastModDate.getMonth() + "/" + lastModDate.getDate() + "/" 
-           + lastModDate.getFullYear() + " " + lastModDate.getHours() + ":" 
-           + lastModDate.getMinutes() + ":" + lastModDate.getSeconds();
-document.getElementById("last-update").textContent = strLMD;
+// const lastModDate = new Date(document.lastModified);
+// let strLMD = 'Last updated on: ' + lastModDate.getMonth() + "/" + lastModDate.getDate() + "/" 
+//            + lastModDate.getFullYear() + " " + lastModDate.getHours() + ":" 
+//            + lastModDate.getMinutes() + ":" + lastModDate.getSeconds();
+// document.getElementById("last-update").textContent = strLMD;
 
 
 
@@ -88,7 +85,8 @@ function destiantionSelect_onChange (){
 
 
 
-async function apiFetch() {
+async function apiFetch(url) {
+  let data="";
   try {
     const response = await fetch(url);
     if (response.ok) {
@@ -99,19 +97,21 @@ async function apiFetch() {
     }
   } catch (error) {
       alert(error);
+      
   }
 }
 function updateWeather(templeLocation){
-   url = `https://api.openweathermap.org/data/2.5/forecast?q=${templeLocation.replace(" ","%20")},US&appid=a1cdf4d637caf46a9288686067728afa&units=imperial`
-   const cityWeather = document.querySelector("#city-weather")
-   cityWeather.innerHTML = templeLocation 
-   apiFetch();
+    let url="";
+    url = `https://api.openweathermap.org/data/2.5/forecast?q=${templeLocation.replace(" ","%20")},US&appid=a1cdf4d637caf46a9288686067728afa&units=imperial`;
+    const cityWeather = document.querySelector("#city-weather");
+    cityWeather.innerHTML = templeLocation; 
+    apiFetch(url);
  }
 
  function displayResults(weatherData){
     //86400
     //currentTemp.innerHTML = `${weatherData.main.temp.toFixed(0)}`;
-    let dataWeather = weatherData.list
+    let dataWeather = weatherData.list;
     let startHour = 0;
       //create the holder of all weathers per day
       const father = document.querySelector("#five-days-weather");
