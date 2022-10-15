@@ -27,7 +27,7 @@ const rndNum = Math.floor(Math.random() * 14) + 1; // to get a random number of 
 
 /* load the options for the destination select */
 let destiantionSelect = document.querySelector('#destiantion');
-const requestFile = 'data/data.json';
+const requestFile = 'data/hotels.json';
 if ( document.URL.includes("index.html") ||  document.URL.includes("reservations.html") ){
   fetch(requestFile)
     .then(function (response) {
