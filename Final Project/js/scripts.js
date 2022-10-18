@@ -1,7 +1,7 @@
 
 
 
-let templeData = {}
+let hotelData = {}
 let compareRndnum = 0
 const rndNum = Math.floor(Math.random() * 14) + 1; // to get a random number of temples.
 /*  humburger menu  */
@@ -20,39 +20,54 @@ const rndNum = Math.floor(Math.random() * 14) + 1; // to get a random number of 
 //            + lastModDate.getMinutes() + ":" + lastModDate.getSeconds();
 // document.getElementById("last-update").textContent = strLMD;
 
-
-
-
-
-
 /* load the options for the destination select */
 let destiantionSelect = document.querySelector('#destiantion');
-const requestFile = 'data/hotels.json';
-if ( document.URL.includes("index.html") ||  document.URL.includes("reservations.html") ){
-  fetch(requestFile)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (jsonObject) {
-      templeData = jsonObject;
-      templeData.forEach(addTemple)
-      
-    });
-
-  function addTemple(temple){
-    compareRndnum+=1
-      if (compareRndnum == rndNum && document.URL.includes("index.html")){
-        const html = `<option  selected="selected" value="${temple.name}">${temple.name}</option>\n`;
-        destiantionSelect.innerHTML += html;
-        updateWeather(temple.location)
-      }else{
-        const html = `<option value="${temple.name}">${temple.name}</option>\n`;
-        destiantionSelect.innerHTML += html;
-      }
-      
-  }
 
 
+
+function getHotelDetailInfo(hotelID){
+  //'https://hotels4.p.rapidapi.com/locations/v3/search?q=new%20york&locale=en_US&langid=1033&siteid=300000001'
+  const options = {
+      method: 'GET',
+      headers: {
+          //'X-RapidAPI-Key': '5c80726bacmsha4026533a6e64d3p14eef0jsn0eb1adbcc357',
+          //'X-RapidAPI-Key': '6931d989ffmsh118bed85a85a6c4p176f43jsn2b460f96d581',
+          //'X-RapidAPI-Key': '04f2322d57msh40214398878f730p1baf7bjsnba45fd962457',
+          //mia
+          'X-RapidAPI-Key': '7dc985f0bemsh074067a14f3282bp131014jsn8d3feb7f0864',
+          'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'}
+  };
+    return fetch('https://hotels4.p.rapidapi.com/properties/get-details?id=50283168&checkIn=2020-01-08&checkOut=2020-01-15&adults1=1&currency=USD&locale=en_US', options)
+      .then(response => response.json())
+      .catch(err => console.error(err));
+
+};
+
+function loadCombo(){
+  const requestFile = 'data/hotels.json';
+  if ( document.URL.includes("index.html") ||  document.URL.includes("reservations.html") ){
+    fetch(requestFile)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (jsonObject) {
+        hotelData = jsonObject;
+        hotelData[0].hotelID.forEach(addHotelCity)
+        
+      });
+  };
+};
+
+function addHotelCity(hotelID){  
+  const info = getHotelDetailInfo(hotelID);
+  if ((document.URL.includes("index.html") ||  document.URL.includes("reservations.html")) && hotelID == hotelData[0].hotelID[0]){
+    const html = `<option  selected="selected" value="${hotelID}">${hotelID}</option>\n`;
+    destiantionSelect.innerHTML += html;
+    //updateWeather(hotelID.location)
+  }else{
+    const html = `<option value="${hotelID}">${hotelID}</option>\n`;
+    destiantionSelect.innerHTML += html;
+  };
   destiantionSelect.addEventListener("change",destiantionSelect_onChange);
 };
 
@@ -63,7 +78,7 @@ function destiantionSelect_onChange (){
     let phone = document.querySelector("#temple-phone");
     let image = document.querySelector("#temple-img");
     let templeInfo = document.querySelector(".temple-info");
-    let t = templeData.forEach(temple => {
+    let t = hotelData.forEach(temple => {
       if (temple.name == destiantionSelect.value){
         name.textContent = temple.name;
         address.textContent = temple.address;
@@ -73,14 +88,14 @@ function destiantionSelect_onChange (){
         image.setAttribute('alt', `Image of ${temple.name}`);
         templeInfo.style.visibility = "visible"
         updateWeather(temple.location)
-      }
-        })
+      };
+        });
 
   }else{     
     let templeInfo = document.querySelector(".temple-info"); 
     templeInfo.style.visibility = 'hidden';
-  }
-} 
+  };
+} ;
 
 
 
@@ -94,12 +109,12 @@ async function apiFetch(url) {
       displayResults(data);
     } else {
         throw Error(await response.text());
-    }
+    };
   } catch (error) {
       alert(error);
       
-  }
-}
+  };
+};
 function updateWeather(templeLocation){
     let url="";
     url = `https://api.openweathermap.org/data/2.5/forecast?q=${templeLocation.replace(" ","%20")},US&appid=a1cdf4d637caf46a9288686067728afa&units=imperial`;
@@ -157,14 +172,9 @@ function updateWeather(templeLocation){
       return forHourTimeFrame;
     };
   });
- }
+ };
 
 
 
 
-
-
-
-
-
-
+ loadCombo();
