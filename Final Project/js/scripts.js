@@ -25,22 +25,26 @@ let destiantionSelect = document.querySelector('#destiantion');
 
 
 
-function getHotelDetailInfo(hotelID){
+async function getHotelDetailInfo(hotelID){
   //'https://hotels4.p.rapidapi.com/locations/v3/search?q=new%20york&locale=en_US&langid=1033&siteid=300000001'
   const options = {
-      method: 'GET',
-      headers: {
-          //'X-RapidAPI-Key': '5c80726bacmsha4026533a6e64d3p14eef0jsn0eb1adbcc357',
-          //'X-RapidAPI-Key': '6931d989ffmsh118bed85a85a6c4p176f43jsn2b460f96d581',
-          //'X-RapidAPI-Key': '04f2322d57msh40214398878f730p1baf7bjsnba45fd962457',
-          //mia
-          'X-RapidAPI-Key': '7dc985f0bemsh074067a14f3282bp131014jsn8d3feb7f0864',
-          'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'}
-  };
-    return fetch('https://hotels4.p.rapidapi.com/properties/get-details?id=50283168&checkIn=2020-01-08&checkOut=2020-01-15&adults1=1&currency=USD&locale=en_US', options)
-      .then(response => response.json())
-      .catch(err => console.error(err));
+    method: 'GET',
+    headers: {
+        //'X-RapidAPI-Key': '5c80726bacmsha4026533a6e64d3p14eef0jsn0eb1adbcc357',
+        //'X-RapidAPI-Key': '6931d989ffmsh118bed85a85a6c4p176f43jsn2b460f96d581',
+        'X-RapidAPI-Key': '04f2322d57msh40214398878f730p1baf7bjsnba45fd962457',
+        //mia
+        //'X-RapidAPI-Key': '7dc985f0bemsh074067a14f3282bp131014jsn8d3feb7f0864',
+        'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'}
+};
+  const a = await fetch(`https://hotels4.p.rapidapi.com/properties/get-details?id=${hotelID}&checkIn=2020-01-08&checkOut=2020-01-15&adults1=1&currency=USD&locale=en_US`, options)
+    .then(response => response.json())
+    .catch(err => console.error(err));
+    //add all from function addHotelCity
 
+  return a;
+  //Create a variable with all the info for all the hotels
+  
 };
 
 function loadCombo(){
@@ -52,22 +56,24 @@ function loadCombo(){
       })
       .then(function (jsonObject) {
         hotelData = jsonObject;
-        hotelData[0].hotelID.forEach(addHotelCity)
+        hotelData[0].hotelID.forEach(addHotelCity)//send to getHotelDetailInfo
         
       });
   };
 };
 
 function addHotelCity(hotelID){  
+  let hName = ''
   const info = getHotelDetailInfo(hotelID);
-  if ((document.URL.includes("index.html") ||  document.URL.includes("reservations.html")) && hotelID == hotelData[0].hotelID[0]){
-    const html = `<option  selected="selected" value="${hotelID}">${hotelID}</option>\n`;
-    destiantionSelect.innerHTML += html;
-    //updateWeather(hotelID.location)
-  }else{
-    const html = `<option value="${hotelID}">${hotelID}</option>\n`;
-    destiantionSelect.innerHTML += html;
-  };
+    if ((document.URL.includes("index.html") ||  document.URL.includes("reservations.html")) && hotelID == hotelData[0].hotelID[0]){
+      hName = info.data.body.propertyDescription.name
+      const html = `<option  selected="selected" value="${hName}">${hName}</option>\n`;
+      destiantionSelect.innerHTML += html;
+      //updateWeather(hotelID.location)
+    }else{
+      const html = `<option value="${hName}">${hName}</option>\n`;
+      destiantionSelect.innerHTML += html;
+    };
   destiantionSelect.addEventListener("change",destiantionSelect_onChange);
 };
 
