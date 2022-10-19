@@ -4,7 +4,7 @@ import { loadHeaderFooter } from "./utils.js";
 loadHeaderFooter();
 
 
-
+// debugger
 // const options = {
 //     method: 'GET',
 //     headers: {
