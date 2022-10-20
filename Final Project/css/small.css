@@ -16,6 +16,7 @@ body{
     line-height: 1.5;
     background-color: var(--bg-color);
     font-family:'Ubuntu', 'Source Sans Pro', sans-serif ;
+    min-width: 290px;
 }
 
 aside{

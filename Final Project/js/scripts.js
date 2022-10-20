@@ -73,7 +73,7 @@ function loadCombo(){
       })
       .then(function (jsonObject) {
         hotelData = jsonObject;
-        hotelData[0].hotelID.forEach(getHotelDetailInfo)//send to getHotelDetailInfo
+        //hotelData[0].hotelID.forEach(getHotelDetailInfo)//send to getHotelDetailInfo
       });
   };
   destiantionSelect.addEventListener("change",destiantionSelect_onChange);
@@ -82,23 +82,34 @@ function loadCombo(){
 
 function destiantionSelect_onChange (){
   if (destiantionSelect.value != ""){
-    let name = document.querySelector("#temple-name");
-    let address = document.querySelector("#temple-address");
-    let phone = document.querySelector("#temple-phone");
-    let image = document.querySelector("#temple-img");
-    let templeInfo = document.querySelector(".temple-info");
-    let t = hotelData.forEach(temple => {
-      if (temple.name == destiantionSelect.value){
-        name.textContent = temple.name;
-        address.textContent = temple.address;
-        phone.textContent = temple.phone;
-        image.setAttribute('src', temple.imageUrl);
-        image.setAttribute('src', temple.imageUrl);
-        image.setAttribute('alt', `Image of ${temple.name}`);
-        templeInfo.style.visibility = "visible"
-        updateWeather(temple.location)
-      };
-        });
+    let roomCombo = document.querySelector("#roomCombo");
+    let a = hotelData.forEach(temple => {
+
+
+    });
+
+
+
+
+
+
+    // let name = document.querySelector("#temple-name");
+    // let address = document.querySelector("#temple-address");
+    // let phone = document.querySelector("#temple-phone");
+    // let image = document.querySelector("#temple-img");
+    // let templeInfo = document.querySelector(".temple-info");
+    // let t = hotelData.forEach(temple => {
+    //   if (temple.name == destiantionSelect.value){
+    //     name.textContent = temple.name;
+    //     address.textContent = temple.address;
+    //     phone.textContent = temple.phone;
+    //     image.setAttribute('src', temple.imageUrl);
+    //     image.setAttribute('src', temple.imageUrl);
+    //     image.setAttribute('alt', `Image of ${temple.name}`);
+    //     templeInfo.style.visibility = "visible"
+    //     updateWeather(temple.location)
+    //   };
+    //     });
 
   }else{     
     let templeInfo = document.querySelector(".temple-info"); 
