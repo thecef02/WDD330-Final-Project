@@ -48,3 +48,10 @@ export function renderWithTemplate(template, parent, data, callback) {
     }
     parent.appendChild(clone);
   }
+
+
+  export function getParam(param) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get(param);
+  }

@@ -23,7 +23,24 @@ const rndNum = Math.floor(Math.random() * 14) + 1; // to get a random number of 
 
 /* load the options for the destination select */
 let destiantionSelect = document.querySelector('#destiantion');
+let makeReservation = document.querySelector('.bed-button');
+makeReservation.addEventListener("click",redirectToReservation);
 
+let checkIn = document.querySelector('#checkIn');
+let checkOut = document.querySelector('#checkOut');
+
+function redirectToReservation(){
+  console.log(destiantionSelect.value)
+  console.log(roomCombo.value)
+  console.log(checkIn.innerHTML)
+    console.log(checkOut.innerText)
+  window.location.href = './reservations.html';
+
+
+
+
+
+};
 
 
 function getHotelDetailInfo(hotelID){
@@ -84,8 +101,11 @@ function loadCombo(){
 function destiantionSelect_onChange (){
   let h = [];
   let roomCombo = document.querySelector("#roomCombo");
+  let hotelInfo = document.querySelector(".hotel-info");
   roomCombo.innerHTML = "";
   if (destiantionSelect.value != ""){ //it enters if a hotel has been selected
+
+    //all options of rooms
     h= allHotelInfo[destiantionSelect.value].data.body.propertyDescription.roomTypeNames;
       const html = `<option  selected="selected" value="">--Select  Room--</option>\n`;
       roomCombo.innerHTML += html;
@@ -95,34 +115,28 @@ function destiantionSelect_onChange (){
     });
 
     //amenities = allHotelInfo[destiantionSelect.value].data.body...a..
-      
-
-
-
-    // let name = document.querySelector("#temple-name");
-    // let address = document.querySelector("#temple-address");
-    // let phone = document.querySelector("#temple-phone");
-    // let image = document.querySelector("#temple-img");
-    // let templeInfo = document.querySelector(".temple-info");
-    // let t = hotelData.forEach(temple => {
-    //   if (temple.name == destiantionSelect.value){
-    //     name.textContent = temple.name;
-    //     address.textContent = temple.address;
-    //     phone.textContent = temple.phone;
-    //     image.setAttribute('src', temple.imageUrl);
-    //     image.setAttribute('src', temple.imageUrl);
-    //     image.setAttribute('alt', `Image of ${temple.name}`);
-    //     templeInfo.style.visibility = "visible"
-    //     updateWeather(temple.location)
-    //   };
-    //     });
+    
+    
+    //hotel address
+    let fAddress = allHotelInfo[destiantionSelect.value].data.body.propertyDescription.address.fullAddress.replace(', United States of America','');  
+    let name = document.querySelector("#hotel-name");
+    name.textContent = destiantionSelect.selectedOptions[0].innerText;
+    let address = document.querySelector("#hotel-address");
+    address.textContent = fAddress;
+    let phone = document.querySelector("#hotel-phone");
+    phone.textContent = '1-800-159-4657'; //no phone number on API.
+    //let image = document.querySelector("#hotel-img");
+        //image.setAttribute('src', allHotelInfo[destiantionSelect.value].data.body.propertyDescription.mapWidget.staticMapUrl);
+        //image.setAttribute('alt', `Image of ${destiantionSelect.text}`);
+        hotelInfo.style.visibility = "visible"
+        updateWeather(allHotelInfo[destiantionSelect.value].data.body.propertyDescription.address.cityName)
 
   }else{     
     const html = `<option  value="">--Select Room--</option>\n`;
     roomCombo.innerHTML += html;
 
-    let templeInfo = document.querySelector(".temple-info"); 
-    templeInfo.style.visibility = 'hidden';
+     
+    hotelInfo.style.visibility = 'hidden';
   };
 } ;
 

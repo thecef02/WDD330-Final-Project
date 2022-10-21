@@ -173,17 +173,17 @@ header nav ul.open {display: block;}
 }
 
 
-.temple-info h3, .temple-info p{
+.hotel-info h3, .hotel-info p{
     color: #000;
 }
-.temple-info{
+.hotel-info{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     margin-left: 4px;
 }
-.temple-info p{margin-left: 10px;}
-.temple-info img{
+.hotel-info p{margin-left: 10px;}
+.hotel-info img{
     display: none;
 }
 
@@ -346,11 +346,14 @@ header nav ul.open {display: block;}
 }
 .bed-holder{
     margin: .5rem;
-
     background-color:white;
     border-radius: 3px;
     border: 1px solid rgba(0,0,0,0.2);
     text-align: center;
+}
+.bed-holder button{
+    border: none;
+    background-color: #fff;
 }
 .bed-image{
     width: 96%;
@@ -358,11 +361,14 @@ header nav ul.open {display: block;}
     border-radius: 3px;
 }
 .bed-button{
-    margin: 1rem 2.5rem;
+    margin: 1rem .2rem;
     background-color: #2f4858;
-    padding: .6rem 0;
+    padding: .6rem 1.8rem;
     color: #fef19a;
+    border-radius: 10px;
+    
 }
+
 .bed-para{
     font-size: 14px;
     margin: 0 .3rem;
@@ -524,7 +530,9 @@ header nav ul.open {display: block;}
     color: #4962a5;
 }
 
+.bed-button{
 
+}
 
 
 

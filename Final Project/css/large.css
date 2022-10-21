@@ -36,14 +36,14 @@
         width: 100%;
     }
 
-    .temple-info :nth-child(4){
+    .hotel-info :nth-child(4){
         flex: none;
     }
-    .temple-info{        
+    .hotel-info{        
         visibility: hidden;
         top: 7rem;
     }
-    .temple-info img{
+    .hotel-info img{
         display:block;
         margin: 1rem 0 0 2rem;
         height: 100px;
