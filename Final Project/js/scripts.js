@@ -43,14 +43,14 @@ function getHotelDetailInfo(hotelID){
   const a = fetch(`https://hotels4.p.rapidapi.com/properties/get-details?id=${hotelID}&checkIn=2020-01-08&checkOut=2020-01-15&adults1=1&currency=USD&locale=en_US`, options)
     .then(response => response.json())
     .then(function(response){
-      //debugger;
       hName = response.data.body.propertyDescription.name
       allHotelInfo[hotelID] = response;
       if ((document.URL.includes("index.html") ||  document.URL.includes("reservations.html")) && hotelID == hotelData[0].hotelID[0]){
         
-        const html = `<option  selected="selected" value="${hotelID}">${hName}</option>\n`;
+        const html = `<option  value="${hotelID}">${hName}</option>\n`;
         destiantionSelect.innerHTML += html;
-        updateWeather(response.data.body.propertyDescription.address.cityName)  //update the Weather section by passing the city.
+        // updateWeather(response.data.body.propertyDescription.address.cityName)  //update the Weather section by passing the city.
+        // destiantionSelect_onChange ()
       }else{
         const html = `<option value="${hotelID}">${hName}</option>\n`;
         destiantionSelect.innerHTML += html;
@@ -73,19 +73,25 @@ function loadCombo(){
       })
       .then(function (jsonObject) {
         hotelData = jsonObject;
-        //hotelData[0].hotelID.forEach(getHotelDetailInfo)//send to getHotelDetailInfo
+        hotelData[0].hotelID.forEach(getHotelDetailInfo)//send to getHotelDetailInfo
       });
   };
+
   destiantionSelect.addEventListener("change",destiantionSelect_onChange);
 };
 
 
 function destiantionSelect_onChange (){
+  let h = [];
+  let roomCombo = document.querySelector("#roomCombo");
+  roomCombo.innerHTML = "";
   if (destiantionSelect.value != ""){
-    let roomCombo = document.querySelector("#roomCombo");
-    let a = hotelData.forEach(temple => {
-
-
+    h= allHotelInfo[destiantionSelect.value].data.body.propertyDescription.roomTypeNames;
+      const html = `<option  selected="selected" value="">--Select  Room--</option>\n`;
+      roomCombo.innerHTML += html;
+    let a = h.forEach(roomType => {
+        const html = `<option  selected="selected" value="${h.indexOf(roomType)}">${roomType}</option>\n`;
+        roomCombo.innerHTML += html;
     });
 
 
@@ -112,6 +118,9 @@ function destiantionSelect_onChange (){
     //     });
 
   }else{     
+    const html = `<option  value="">--Select Room--</option>\n`;
+    roomCombo.innerHTML += html;
+
     let templeInfo = document.querySelector(".temple-info"); 
     templeInfo.style.visibility = 'hidden';
   };
