@@ -85,7 +85,7 @@ function destiantionSelect_onChange (){
   let h = [];
   let roomCombo = document.querySelector("#roomCombo");
   roomCombo.innerHTML = "";
-  if (destiantionSelect.value != ""){
+  if (destiantionSelect.value != ""){ //it enters if a hotel has been selected
     h= allHotelInfo[destiantionSelect.value].data.body.propertyDescription.roomTypeNames;
       const html = `<option  selected="selected" value="">--Select  Room--</option>\n`;
       roomCombo.innerHTML += html;
@@ -94,8 +94,8 @@ function destiantionSelect_onChange (){
         roomCombo.innerHTML += html;
     });
 
-
-
+    //amenities = allHotelInfo[destiantionSelect.value].data.body...a..
+      
 
 
 
