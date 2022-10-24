@@ -22,7 +22,9 @@
   <link rel="stylesheet" href="css/medium.css" />
   <link rel="stylesheet" href="css/large.css" />
   <script src="js/main.js"  type="module"></script>
-  <script src="js/reservation.js"></script>
+  <!-- <script src="js/reservation.js"></script> -->
+  <script src="./js/scripts.js"  type="module"></script>
+ 
 </head>
 
 <body>
@@ -33,14 +35,14 @@
         <fieldset class="main-fieldss">
           <legend>Make a reservation</legend>
           <label class="lbl">Select Nearby Location*
-            <select id="destiantion" class="select-lbl" name="destiantion" required>
+            <select id="destination" class="select-lbl" name="destination" required>
               <option value="">--Select a City--</option>
             </select> 
           </label>
-          <label class="lbl">Check in*<input type="date" name="check-in" required> </label>
-          <label class="lbl">Check out*<input type="date" name="check-out" required> </label>
+          <label class="lbl">Check in*<input id="checkIn" type="date" name="check-in" required> </label>
+          <label class="lbl">Check out*<input id="checkOut" type="date" name="check-out" required> </label>
           <label class="lbl">Room / guest*
-            <select class="select-lbl" name="room" required>
+            <select id="room" class="select-lbl" name="room" required>
               <option value="">--Select Room--</option>
             </select></label>
     

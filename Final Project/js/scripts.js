@@ -1,44 +1,33 @@
-
+import { getParam } from "./utils.js";destination
 
 
 let hotelData = {};
 let allHotelInfo = {};
-let compareRndnum = 0;
-const rndNum = Math.floor(Math.random() * 14) + 1; // to get a random number of temples.
-/*  humburger menu  */
-// function toggleMenu() {
-//     document.getElementById("primaryNav").classList.toggle("open");
-//     document.getElementById("hamburgerBtn").classList.toggle("open");
-// }
-// const x = document.getElementById("hamburgerBtn");
-// x.onclick = toggleMenu;
 
-
-//footer show last modified.
-// const lastModDate = new Date(document.lastModified);
-// let strLMD = 'Last updated on: ' + lastModDate.getMonth() + "/" + lastModDate.getDate() + "/" 
-//            + lastModDate.getFullYear() + " " + lastModDate.getHours() + ":" 
-//            + lastModDate.getMinutes() + ":" + lastModDate.getSeconds();
-// document.getElementById("last-update").textContent = strLMD;
 
 /* load the options for the destination select */
-let destiantionSelect = document.querySelector('#destiantion');
-let makeReservation = document.querySelector('.bed-button');
-makeReservation.addEventListener("click",redirectToReservation);
-
+let destinationSelect = document.querySelector('#destination');
 let checkIn = document.querySelector('#checkIn');
 let checkOut = document.querySelector('#checkOut');
+let room = document.querySelector('#room');
+if ( document.URL.includes("index.html")){
+  let makeReservation = document.querySelector('.bed-button');
+  makeReservation.addEventListener("click",redirectToReservation);
+}
+else if( document.URL.includes("reservations.html")) {
+  destinationSelect.selectedIdex = getParam("destination");
+  room.selectedIdex = getParam('room');
+  checkIn.value = getParam("checkIn");
+  checkOut.value = getParam("checkOut");
+
+};
 
 function redirectToReservation(){
-  console.log(destiantionSelect.value)
-  console.log(roomCombo.value)
-  console.log(checkIn.innerHTML)
-    console.log(checkOut.innerText)
-  window.location.href = './reservations.html';
-
-
-
-
+  let d = destinationSelect.value;
+  let r = roomCombo.value;
+  let i = checkIn.value;
+  let o = checkOut.value;
+  window.location.href = `./reservations.html?destination=${d}&room=${r}&checkIn=${i}&checkOut=${o}`;
 
 };
 
@@ -54,7 +43,9 @@ function getHotelDetailInfo(hotelID){
         //'X-RapidAPI-Key': '6931d989ffmsh118bed85a85a6c4p176f43jsn2b460f96d581',
         //'X-RapidAPI-Key': '04f2322d57msh40214398878f730p1baf7bjsnba45fd962457',
         //mia
-        'X-RapidAPI-Key': '7dc985f0bemsh074067a14f3282bp131014jsn8d3feb7f0864',
+        //'X-RapidAPI-Key': '7dc985f0bemsh074067a14f3282bp131014jsn8d3feb7f0864',
+        //thecef02
+        'X-RapidAPI-Key': 'b858a9d176mshec01cd990f51108p1c807bjsn757d73457e96',
         'X-RapidAPI-Host': 'hotels4.p.rapidapi.com'}
 };
   const a = fetch(`https://hotels4.p.rapidapi.com/properties/get-details?id=${hotelID}&checkIn=2020-01-08&checkOut=2020-01-15&adults1=1&currency=USD&locale=en_US`, options)
@@ -63,14 +54,13 @@ function getHotelDetailInfo(hotelID){
       hName = response.data.body.propertyDescription.name
       allHotelInfo[hotelID] = response;
       if ((document.URL.includes("index.html") ||  document.URL.includes("reservations.html")) && hotelID == hotelData[0].hotelID[0]){
-        
         const html = `<option  value="${hotelID}">${hName}</option>\n`;
-        destiantionSelect.innerHTML += html;
+        destinationSelect.innerHTML += html;
         // updateWeather(response.data.body.propertyDescription.address.cityName)  //update the Weather section by passing the city.
-        // destiantionSelect_onChange ()
+        // destinationSelect_onChange ()
       }else{
         const html = `<option value="${hotelID}">${hName}</option>\n`;
-        destiantionSelect.innerHTML += html;
+        destinationSelect.innerHTML += html;
       };
       
     })
@@ -94,19 +84,19 @@ function loadCombo(){
       });
   };
 
-  destiantionSelect.addEventListener("change",destiantionSelect_onChange);
+  destinationSelect.addEventListener("change",destinationSelect_onChange);
 };
 
 
-function destiantionSelect_onChange (){
+function destinationSelect_onChange (){
   let h = [];
   let roomCombo = document.querySelector("#roomCombo");
   let hotelInfo = document.querySelector(".hotel-info");
   roomCombo.innerHTML = "";
-  if (destiantionSelect.value != ""){ //it enters if a hotel has been selected
+  if (destinationSelect.value != ""){ //it enters if a hotel has been selected
 
     //all options of rooms
-    h= allHotelInfo[destiantionSelect.value].data.body.propertyDescription.roomTypeNames;
+    h= allHotelInfo[destinationSelect.value].data.body.propertyDescription.roomTypeNames;
       const html = `<option  selected="selected" value="">--Select  Room--</option>\n`;
       roomCombo.innerHTML += html;
     let a = h.forEach(roomType => {
@@ -114,22 +104,22 @@ function destiantionSelect_onChange (){
         roomCombo.innerHTML += html;
     });
 
-    //amenities = allHotelInfo[destiantionSelect.value].data.body...a..
+    //amenities = allHotelInfo[destinationSelect.value].data.body...a..
     
     
     //hotel address
-    let fAddress = allHotelInfo[destiantionSelect.value].data.body.propertyDescription.address.fullAddress.replace(', United States of America','');  
+    let fAddress = allHotelInfo[destinationSelect.value].data.body.propertyDescription.address.fullAddress.replace(', United States of America','');  
     let name = document.querySelector("#hotel-name");
-    name.textContent = destiantionSelect.selectedOptions[0].innerText;
+    name.textContent = destinationSelect.selectedOptions[0].innerText;
     let address = document.querySelector("#hotel-address");
     address.textContent = fAddress;
     let phone = document.querySelector("#hotel-phone");
     phone.textContent = '1-800-159-4657'; //no phone number on API.
     //let image = document.querySelector("#hotel-img");
-        //image.setAttribute('src', allHotelInfo[destiantionSelect.value].data.body.propertyDescription.mapWidget.staticMapUrl);
-        //image.setAttribute('alt', `Image of ${destiantionSelect.text}`);
+        //image.setAttribute('src', allHotelInfo[destinationSelect.value].data.body.propertyDescription.mapWidget.staticMapUrl);
+        //image.setAttribute('alt', `Image of ${destinationSelect.text}`);
         hotelInfo.style.visibility = "visible"
-        updateWeather(allHotelInfo[destiantionSelect.value].data.body.propertyDescription.address.cityName)
+        updateWeather(allHotelInfo[destinationSelect.value].data.body.propertyDescription.address.cityName)
 
   }else{     
     const html = `<option  value="">--Select Room--</option>\n`;
@@ -217,7 +207,29 @@ function updateWeather(hotelLocation){
   });
  };
 
+function preLoadInfo(){
+    const dest = getParam("destination");
+    let hName =''
+    const destination = document.querySelector("#destination")
+    allHotelInfo.foreach(hotelID =>{
+        const html = `<option  value="${hotelID}">${allHotelInfo[hotelID].data.body.propertyDescription.name}</option>\n`;
+        destination.innerHTML += html;
+    })
+    destination.selectedIdex = dest
+    const h = allHotelInfo[destination.value].data.body.propertyDescription.roomTypeNames
+    h.forEach(roomType => {
+        const html = `<option  selected="selected" value="${h.indexOf(roomType)}">${roomType}</option>\n`;
+        roomCombo.innerHTML += html;
+    });
 
+    const checkIn = document.querySelector("#checkIn")
+    checkIn.value = getParam("checkIn");
+    const checkOut = document.querySelector("#checkOut");
+    checkOut.value = getParam("checkOut");
+    const room = document.querySelector("#roomCombo");
+    room.selectedIndex = getParam("room");
+
+};
 
 
  loadCombo();
