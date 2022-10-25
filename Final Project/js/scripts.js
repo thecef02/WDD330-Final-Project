@@ -37,7 +37,6 @@ function redirectToReservation(){
 function getHotelDetailInfo(hotelID){
   //'https://hotels4.p.rapidapi.com/locations/v3/search?q=new%20york&locale=en_US&langid=1033&siteid=300000001'
   let hName = '';
-  //debugger;
   const options = {
     method: 'GET',
     headers: {
@@ -67,8 +66,6 @@ function getHotelDetailInfo(hotelID){
     
     .catch(err => console.error(err));
     //add all from function addHotelCity
-
-  console.log(allHotelInfo);
 };
 
 function loadCombo(){
@@ -136,9 +133,6 @@ function destinationSelect_onChange (){
     address.textContent = fAddress;
     let phone = document.querySelector("#hotel-phone");
     phone.textContent = '1-800-159-4657'; //no phone number on API.
-    //let image = document.querySelector("#hotel-img");
-        //image.setAttribute('src', allHotelInfo[destinationSelect.value].data.body.propertyDescription.mapWidget.staticMapUrl);
-        //image.setAttribute('alt', `Image of ${destinationSelect.text}`);
         hotelInfo.style.visibility = "visible"
         updateWeather(allHotelInfo[destinationSelect.value].data.body.propertyDescription.address.cityName)
 
@@ -178,8 +172,6 @@ function updateWeather(hotelLocation){
  }
 
  function displayResults(weatherData){
-    //86400
-    //currentTemp.innerHTML = `${weatherData.main.temp.toFixed(0)}`;
     let dataWeather = weatherData.list;
     let startHour = 0;
       //create the holder of all weathers per day
