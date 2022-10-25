@@ -1,4 +1,4 @@
-import { getParam } from "./utils.js";destination
+import { getParam } from "./utils.js";
 
 
 let hotelData = {};
@@ -9,14 +9,16 @@ let allHotelInfo = {};
 let destinationSelect = document.querySelector('#destination');
 let checkIn = document.querySelector('#checkIn');
 let checkOut = document.querySelector('#checkOut');
-let room = document.querySelector('#room');
+let room = document.querySelector('#roomCombo');
 if ( document.URL.includes("index.html")){
-  let makeReservation = document.querySelector('.bed-button');
-  makeReservation.addEventListener("click",redirectToReservation);
+  let makeReservation = document.querySelectorAll('.bed-button');
+  makeReservation.forEach(button =>{
+    button.addEventListener("click",redirectToReservation);
+  })
 }
 else if( document.URL.includes("reservations.html")) {
-  destinationSelect.selectedIdex = getParam("destination");
-  room.selectedIdex = getParam('room');
+  destinationSelect.selectedIndex = getParam("destination");
+  room.selectedIndex = getParam('room');
   checkIn.value = getParam("checkIn");
   checkOut.value = getParam("checkOut");
 
@@ -56,8 +58,6 @@ function getHotelDetailInfo(hotelID){
       if ((document.URL.includes("index.html") ||  document.URL.includes("reservations.html")) && hotelID == hotelData[0].hotelID[0]){
         const html = `<option  value="${hotelID}">${hName}</option>\n`;
         destinationSelect.innerHTML += html;
-        // updateWeather(response.data.body.propertyDescription.address.cityName)  //update the Weather section by passing the city.
-        // destinationSelect_onChange ()
       }else{
         const html = `<option value="${hotelID}">${hName}</option>\n`;
         destinationSelect.innerHTML += html;
@@ -105,7 +105,28 @@ function destinationSelect_onChange (){
     });
 
     //amenities = allHotelInfo[destinationSelect.value].data.body...a..
-    
+    const ameniti1 = document.querySelector("#ameniti1");
+    const ameniti2 = document.querySelector("#ameniti2");
+    ameniti1.innerHTML = '';
+    ameniti2.innerHTML = '';
+    allHotelInfo[destinationSelect.value].data.body.amenities.forEach(amenity =>{
+      amenity.listItems.forEach(section =>{
+        let html = `<strong>${section.heading}</strong>: `
+        section.listItems.forEach(item => {
+          const subAmenities = `${item}, `;
+          html += subAmenities;
+        })
+        html = html.substring(0,html.length -2);
+        
+        if (amenity.heading == 'In the hotel'){
+          ameniti1.innerHTML += `<li>${html}.</li>`;
+        }
+        else {
+          ameniti2.innerHTML += `<li>${html}.</li>`;
+        }
+        
+      })
+    })
     
     //hotel address
     let fAddress = allHotelInfo[destinationSelect.value].data.body.propertyDescription.address.fullAddress.replace(', United States of America','');  
@@ -230,6 +251,68 @@ function preLoadInfo(){
     room.selectedIndex = getParam("room");
 
 };
+
+
+
+
+
+let destination = document.getElementById("destination"),
+    checkingIn = document.getElementById("checkIn"),
+    checkingOut = document.getElementById("checkOut"),
+    roomCombo = document.getElementById("roomCombo");
+    
+  function enlargeInputDestination() {
+    destination.style.transform = "scale(1.3)";
+    destination.style.transition = "all .5s";
+  }
+
+  function shrinkInputDestination() {
+    destination.style.transform = "scale(1)";
+    destination.style.transition = "all .5s";
+  }
+
+  function enlargeInputChekingIn() {
+    checkingIn.style.transform = "scale(1.3)";
+    checkingIn.style.transition = "all .5s";
+  }
+
+  function shrinkInputChekingIn() {
+    checkingIn.style.transform = "scale(1)";
+    checkingIn.style.transition = "all .5s";
+  }
+
+  function enlargeInputChekingOut() {
+    checkingOut.style.transform = "scale(1.3)";
+    checkingOut.style.transition = "all .5s";
+  }
+
+  function shrinkInputChekingOut() {
+    checkingOut.style.transform = "scale(1)";
+    checkingOut.style.transition = "all .5s";
+  }
+
+  function enlargeInputRoomCombo() {
+    roomCombo.style.transform = "scale(1.3)";
+    roomCombo.style.transition = "all .5s";
+  }
+
+  function shrinkInputRoomCombo() {
+    roomCombo.style.transform = "scale(1)";
+    roomCombo.style.transition = "all .5s";
+  }
+
+  destination.addEventListener("focus", enlargeInputDestination);
+  destination.addEventListener("blur", shrinkInputDestination);
+
+  checkingIn.addEventListener("focus", enlargeInputChekingIn);
+  checkingIn.addEventListener("blur", shrinkInputChekingIn);
+
+  checkingOut.addEventListener("focus", enlargeInputChekingOut);
+  checkingOut.addEventListener("blur", shrinkInputChekingOut);
+
+  roomCombo.addEventListener("focus", enlargeInputRoomCombo);
+  roomCombo.addEventListener("blur", shrinkInputRoomCombo);
+
 
 
  loadCombo();

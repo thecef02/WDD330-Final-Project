@@ -14,7 +14,10 @@
     .sub-main-fields{
         display: flex;
     }
-    .main-fields{flex-wrap: wrap;}
+    .main-fields{
+        flex-wrap: wrap;
+        max-width: 60%;
+    }
 
     .company-name img {max-height: 70px}
     .contact p{
@@ -125,5 +128,14 @@
     }
 
 
+
+}
+
+
+@media (min-width: 790px){
+
+    .main-fields{
+        max-width: 100%;
+    }
 
 }
