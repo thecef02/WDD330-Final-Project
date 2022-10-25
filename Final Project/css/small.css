@@ -6,6 +6,13 @@
     --bg-color: #bbe6e4;
     --txt-color: #f28969;
 }
+#adds-bottom:hover, #adds-hoverL:hover, #adds-hoverR:hover{
+    
+    transition: background 1.0s linear 0s;
+    background-color: #4749f7;
+    color:#c4c5d4 ;
+    
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -148,8 +155,6 @@ header nav ul.open {display: block;}
 }
 .fields{
     display: block;
-    /* flex-direction: column;
-    align-items: flex-start; */
     margin-right: 1rem;
     text-align: left;
     background-color: #000;
@@ -181,12 +186,12 @@ header nav ul.open {display: block;}
     flex-direction: column;
     align-items: flex-start;
     margin-left: 4px;
+    visibility: hidden;
 }
 .hotel-info p{margin-left: 10px;}
 .hotel-info img{
     display: none;
 }
-
 
 
 
@@ -335,6 +340,7 @@ header nav ul.open {display: block;}
     width: 100%;
     background-color:#ffffff;
     border: 10px solid #bbe6e4;
+    
 }
 
 #beds{
@@ -383,82 +389,15 @@ header nav ul.open {display: block;}
 
 
 
-
-
-/*   temple.html  */ 
-
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,  minmax(295px, 1fr));
-    margin: 2rem 0;
-    position: relative;
-}
-.grid section {
-    margin: 0.25rem;
-    padding: 0.35rem;
-    background-color: #bbb;
-    border: 1px solid #212480;
-    border-radius: 3px;
-    box-shadow: 2px 3px 5px rgba(0,0,0,.5);
-}
-.grid section > p {
-    min-height: 10px;
-    margin: 0;
-    /* font-family:'Source Sans Pro', sans-serif ; */
-    font-size: .8rem;
-}
-.grid section div{
-    display: flex;
-}
-.grid section div h4{
-    margin: auto;
-    font-size: 1.2rem;
-}
-.grid .imglogo {
-    margin: 0.8rem ;
-    max-width: 380px;
-    box-shadow: 0 0 30px #777;
-    height: 100px;
-    border: 1px solid #333;
-}
-.float-div{
-    width: 100px;
-    height: 100px;
-    background-color: #000;
-    position: absolute;
-    margin-left: 5rem;
-    margin-top: 4rem;
-}
-.grid details summary{
-    font-size: 12px;
-    color: var(--primary-color);
-    font-weight: bold;
-}
-.grid details p{
-    font-size: 14px;
-}
-.grid .imglike{
-    width: 20px;
-    margin-left: 2rem;
-    
-}
-
-
-
-
-
-
-
-
-
-
-
 /*    reservation   */
-#form-reservation fieldset{
+#form-reservation fieldset, .hotel-saved{
     margin: 1rem 0;
     border: 1px solid #445ba9;
     border-radius: 10px;
     padding: .5rem 2%;
+}
+.hotel-saved{
+    visibility: hidden;
 }
 #form-reservation legend{
     color:#445ba9;
@@ -530,23 +469,6 @@ header nav ul.open {display: block;}
     color: #4962a5;
 }
 
-.bed-button{
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -598,100 +520,6 @@ header nav ul.open {display: block;}
 
 
 
-
-
-
-/*      missionary     */
-.all-rooms, .room-rating{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-.room-type{
-    border: 1px solid #bbb;
-    width: 98%;
-    margin: 2% 1%;
-    background-color: #fff;
-    font-size: 14px;
-}
-.room-img{
-    width: 100%;
-    margin: 0;
-}
-
-.room-type h3, .room-stars{
-    text-align: left;
-    margin: 0 .5rem ;
-}
-
-.room-rating{
-    margin: .4rem .5rem;
-}
-.rating{
-    background-color: #2e35f3;
-    padding: 0 .3rem;
-    border-radius: 3px;
-    color: #bbb;
-    font-size: 10px;
-    margin-right: .5rem;
-}
-.rating span{
-    font-size: 14px;
-    color: white;
-}
-.room-reviews{
-    color: #2e35f3;
-    font-weight: 600;
-    margin-right: .5rem;
-}
-.reviews-num span{
-    margin-right: .5rem;
-}
-.reviews-num{color: #888;}
-
-.room-distance, .room-desc{
-    margin: .5em .8rem;
-    text-align: left;
-}
-.room-desc{
-    color: #888;
-}
-.room-price{
-    text-align: right;
-    margin-right: 1rem;
-    font-weight: 700;
-}
-.room-price span{
-    font-size: 1.2rem;
-    color: #2e35f3;
-}
-.room-check{
-    display: flex;
-    justify-content: space-between;
-    
-    position: relative;
-    width: 100%;
-    margin: auto;
-    padding-right: 1rem;
-    
-}
-.room-check div{
-    padding: .5rem .5rem;
-    text-align: center;
-    width: 150px;
-    margin-bottom: .7rem;
-    background-color:var(--secondary-color);
-    border-radius: 5px;
-
-}
-.room-check a{
-    margin: 0 0 .5rem .5rem;
-    text-decoration: none;
-    background-color: #444;
-    padding: .5rem .8rem;
-    border-radius: 3px;
-    color: #bbb;
-}
 
 /*         About us         */
 

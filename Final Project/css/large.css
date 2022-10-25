@@ -43,7 +43,7 @@
         flex: none;
     }
     .hotel-info{        
-        visibility: hidden;
+        visibility: visible;
         top: 7rem;
     }
     .hotel-info img{
@@ -99,18 +99,6 @@
     #five-days-weather>:nth-child(1),#five-days-weather>:nth-child(2), #five-days-weather>:nth-child(3){
         border-bottom: 0px;
     }
-
-
-
-
-    .wedding ul{
-        line-height: 2rem;
-        max-width: 30%;
-        
-    }
-.wedding ul li{
-    font-size: 1rem;
-}
 
 
 

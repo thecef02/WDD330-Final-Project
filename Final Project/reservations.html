@@ -31,7 +31,11 @@
   <header  class="divider" id="main-header">  </header>
   <main>
     <section id="sec-reservation">
+      
+      
+      
       <form method="get" action="thankyou.html" id="form-reservation">
+        <div id="last-hotel" class="hotel-saved"><p>Last hotel selected:</p></div>
         <fieldset class="main-fieldss">
           <legend>Make a reservation</legend>
           <label class="lbl">Select Nearby Location*
@@ -54,7 +58,8 @@
           <label class="lbl">Last Name* <input type="text" name="lname" required> </label>
           <label class="lbl">Email* <input type="email" name="email" placeholder="someone@provider.com" required>
           </label>
-          <label class="lbl">Phone* <input type="tel" name="phone" pattern="[0-9]{,}" placeholder="1235551234" required>
+          <label class="lbl">Phone* <input type="tel" name="phone" pattern="[1-9]{1}[0-9]{9}" placeholder="1235551234" required>
+            <!--  -->
           </label>
           <!-- <label class="lbl">Business name* <input type="text" name="businessname" required> </label> -->
 

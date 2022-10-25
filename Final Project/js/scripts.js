@@ -10,6 +10,7 @@ let destinationSelect = document.querySelector('#destination');
 let checkIn = document.querySelector('#checkIn');
 let checkOut = document.querySelector('#checkOut');
 let room = document.querySelector('#roomCombo');
+
 if ( document.URL.includes("index.html")){
   let makeReservation = document.querySelectorAll('.bed-button');
   makeReservation.forEach(button =>{
@@ -17,6 +18,15 @@ if ( document.URL.includes("index.html")){
   })
 }
 else if( document.URL.includes("reservations.html")) {
+  let savedHotel = getLocalStorage('lastHotel');
+  let lastH = document.querySelector("#last-hotel");
+  if (savedHotel != null){
+    lastH.textContent = `Last hotel selected: ${savedHotel}`;
+    lastH.style.visibility = 'visible';
+  }
+  else{
+    lastH.style.visibility = 'hidden';  
+  }
   destinationSelect.selectedIndex = getParam("destination");
   room.selectedIndex = getParam('room');
   checkIn.value = getParam("checkIn");
@@ -91,8 +101,8 @@ function destinationSelect_onChange (){
   let hotelInfo = document.querySelector(".hotel-info");
   roomCombo.innerHTML = "";
   if (destinationSelect.value != ""){ //it enters if a hotel has been selected
-
     //all options of rooms
+    setLocalStorage('lastHotel',allHotelInfo[destinationSelect.value].data.body.propertyDescription.name)
     h= allHotelInfo[destinationSelect.value].data.body.propertyDescription.roomTypeNames;
       const html = `<option  selected="selected" value="">--Select  Room--</option>\n`;
       roomCombo.innerHTML += html;
@@ -100,54 +110,56 @@ function destinationSelect_onChange (){
         const html = `<option  selected="selected" value="${h.indexOf(roomType)}">${roomType}</option>\n`;
         roomCombo.innerHTML += html;
     });
-
-    //amenities = allHotelInfo[destinationSelect.value].data.body...a..
-    const ameniti1 = document.querySelector("#ameniti1");
-    const ameniti2 = document.querySelector("#ameniti2");
-    ameniti1.innerHTML = '';
-    ameniti2.innerHTML = '';
-    allHotelInfo[destinationSelect.value].data.body.amenities.forEach(amenity =>{
-      amenity.listItems.forEach(section =>{
-        let html = `<strong>${section.heading}</strong>: `
-        section.listItems.forEach(item => {
-          const subAmenities = `${item}, `;
-          html += subAmenities;
+    //amenities
+    if (!document.URL.includes("reservations.html")){
+      const ameniti1 = document.querySelector("#ameniti1");
+      const ameniti2 = document.querySelector("#ameniti2");
+      ameniti1.innerHTML = '';
+      ameniti2.innerHTML = '';
+      allHotelInfo[destinationSelect.value].data.body.amenities.forEach(amenity =>{
+        amenity.listItems.forEach(section =>{
+          let html = `<strong>${section.heading}</strong>: `
+          section.listItems.forEach(item => {
+            const subAmenities = `${item}, `;
+            html += subAmenities;
+          })
+          html = html.substring(0,html.length -2);
+          if (amenity.heading == 'In the hotel'){
+            ameniti1.innerHTML += `<li>${html}.</li>`;
+          }
+          else {
+            ameniti2.innerHTML += `<li>${html}.</li>`;
+          }
         })
-        html = html.substring(0,html.length -2);
-        
-        if (amenity.heading == 'In the hotel'){
-          ameniti1.innerHTML += `<li>${html}.</li>`;
-        }
-        else {
-          ameniti2.innerHTML += `<li>${html}.</li>`;
-        }
-        
       })
-    })
     
-    //hotel address
-    let fAddress = allHotelInfo[destinationSelect.value].data.body.propertyDescription.address.fullAddress.replace(', United States of America','');  
-    let name = document.querySelector("#hotel-name");
-    name.textContent = destinationSelect.selectedOptions[0].innerText;
-    let address = document.querySelector("#hotel-address");
-    address.textContent = fAddress;
-    let phone = document.querySelector("#hotel-phone");
-    phone.textContent = '1-800-159-4657'; //no phone number on API.
-        hotelInfo.style.visibility = "visible"
-        updateWeather(allHotelInfo[destinationSelect.value].data.body.propertyDescription.address.cityName)
-
+      //hotel address
+      let fAddress = allHotelInfo[destinationSelect.value].data.body.propertyDescription.address.fullAddress.replace(', United States of America','');  
+      let name = document.querySelector("#hotel-name");
+      name.textContent = destinationSelect.selectedOptions[0].innerText;
+      let address = document.querySelector("#hotel-address");
+      address.textContent = fAddress;
+      let phone = document.querySelector("#hotel-phone");
+      phone.textContent = '1-800-159-4657'; //no phone number on API.
+      updateWeather(allHotelInfo[destinationSelect.value].data.body.propertyDescription.address.cityName)
+    }
   }else{     
     const html = `<option  value="">--Select Room--</option>\n`;
     roomCombo.innerHTML += html;
-
-     
     hotelInfo.style.visibility = 'hidden';
   };
 } ;
 
 
-
-
+//setting up fetch call
+function updateWeather(hotelLocation){
+    let url="";
+    url = `https://api.openweathermap.org/data/2.5/forecast?q=${hotelLocation.replace(" ","%20")},US&appid=a1cdf4d637caf46a9288686067728afa&units=imperial`;
+    const cityWeather = document.querySelector("#city-weather");
+    cityWeather.innerHTML = hotelLocation; 
+    apiFetch(url);
+ }
+//fetch weather info
 async function apiFetch(url) {
   let data="";
   try {
@@ -163,14 +175,7 @@ async function apiFetch(url) {
       
   };
 };
-function updateWeather(hotelLocation){
-    let url="";
-    url = `https://api.openweathermap.org/data/2.5/forecast?q=${hotelLocation.replace(" ","%20")},US&appid=a1cdf4d637caf46a9288686067728afa&units=imperial`;
-    const cityWeather = document.querySelector("#city-weather");
-    cityWeather.innerHTML = hotelLocation; 
-    apiFetch(url);
- }
-
+ //update html for weather conditions
  function displayResults(weatherData){
     let dataWeather = weatherData.list;
     let startHour = 0;
@@ -220,34 +225,17 @@ function updateWeather(hotelLocation){
   });
  };
 
-function preLoadInfo(){
-    const dest = getParam("destination");
-    let hName =''
-    const destination = document.querySelector("#destination")
-    allHotelInfo.foreach(hotelID =>{
-        const html = `<option  value="${hotelID}">${allHotelInfo[hotelID].data.body.propertyDescription.name}</option>\n`;
-        destination.innerHTML += html;
-    })
-    destination.selectedIdex = dest
-    const h = allHotelInfo[destination.value].data.body.propertyDescription.roomTypeNames
-    h.forEach(roomType => {
-        const html = `<option  selected="selected" value="${h.indexOf(roomType)}">${roomType}</option>\n`;
-        roomCombo.innerHTML += html;
-    });
 
-    const checkIn = document.querySelector("#checkIn")
-    checkIn.value = getParam("checkIn");
-    const checkOut = document.querySelector("#checkOut");
-    checkOut.value = getParam("checkOut");
-    const room = document.querySelector("#roomCombo");
-    room.selectedIndex = getParam("room");
+// retrieve data from localstorage
+function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+// save data to local storage
+function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
 
-};
-
-
-
-
-
+// CSS inplemented to enhance visivility.
 let destination = document.getElementById("destination"),
     checkingIn = document.getElementById("checkIn"),
     checkingOut = document.getElementById("checkOut"),
