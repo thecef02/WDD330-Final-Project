@@ -1,4 +1,7 @@
 
+let a= ""
+
+
 function toggleMenu() {
   document.getElementById("primaryNav").classList.toggle("open");
   document.getElementById("hamburgerBtn").classList.toggle("open");
@@ -47,4 +50,11 @@ export function renderWithTemplate(template, parent, data, callback) {
       clone = callback(clone, data);
     }
     parent.appendChild(clone);
+  }
+
+
+  export function getParam(param) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    return urlParams.get(param);
   }

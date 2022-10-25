@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="css/large.css" />
 
   <script src="./js/main.js" type="module"></script>
-  <script src="js/scripts.js" type="module"></script>
+  <script src="./js/scripts.js" type="module"></script>
 </head>
 
 <body>
@@ -40,19 +40,19 @@
           <div class="sub-main-fields">
             <div class="fields">
               <span>Destination*</span>
-              <select id="destiantion" class="select-lbl" name="destiantion" required>
+              <select id="destination" class="select-lbl" name="destination" required>
                 <option value="">--Select a Hotel--</option>
               </select>
             </div>
             <div class="fields">
               <span>Check in*</span>
-              <label class="lbl"><input type="date" name="check-in" required> </label>
+              <label class="lbl"><input type="date" id="checkIn"  name="check-in" required> </label>
             </div>
           </div>
           <div class="sub-main-fields">
             <div class="fields">
               <span>Check out*</span>
-              <label class="lbl"><input type="date" name="check-out" required> </label>
+              <label class="lbl"><input id="checkOut" type="date" name="check-out" required> </label>
             </div>
 
             <div class="fields">
@@ -66,11 +66,11 @@
         <input type="submit" value="Search room" class="button-submit">
 
       </form>
-      <div class="temple-info">
-        <h3><span id="temple-name"></span></h3>
-        <p><span id="temple-address"></span></p>
-        <p><span id="temple-phone"></span></p>
-        <img id="temple-img" src="" alt="Temple picture">
+      <div class="hotel-info">
+        <h3><span id="hotel-name"></span></h3>
+        <p><span id="hotel-address"></span></p>
+        <p><span id="hotel-phone"></span></p>
+        <!-- <img id="hotel-img" src="" alt="Temple picture"> -->
       </div>
     </section>
 
@@ -79,17 +79,17 @@
       <div class="bed-holder">
         <img class="bed-image" src="images/left.webp" alt="Picture of rooms">
         <p class="bed-para">When you book direct, you get the lowest price.</p>
-        <div class="bed-button">Make reservation</div>
+        <button><div class="bed-button">Make reservation</div></button>
       </div>
       <div class="bed-holder">
         <img class="bed-image" src="images/center.webp" alt="Picture of rooms">
         <p class="bed-para">Check all our offers.</p>
-        <div class="bed-button">Make reservation</div>
+        <button><div class="bed-button">Make reservation</div></button>
       </div>
       <div class="bed-holder">
         <img class="bed-image" src="images/right.webp" alt="Picture of rooms">
         <p class="bed-para">Register now and complete two qualified stays, you'll get 10,000 bonus points.</p>
-        <div class="bed-button">Make reservation</div>
+        <button><div class="bed-button">Make reservation</div></button>
       </div>
 
     </section>

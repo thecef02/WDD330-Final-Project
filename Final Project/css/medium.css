@@ -45,11 +45,11 @@
     }
 
 
-    .temple-info h3, .temple-info p{
+    .hotel-info h3, .hotel-info p{
         color: #08f850;
     }
 
-    .temple-info{
+    .hotel-info{
         position: absolute;
         top: 10rem;
         margin-left: 2rem;
