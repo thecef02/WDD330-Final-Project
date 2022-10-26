@@ -76,7 +76,6 @@ function getHotelDetailInfo(hotelID){
         const html = `<option value="${hotelID}">${hName}</option>\n`;
         destinationSelect.innerHTML += html;
       };
-      
     })
     
     .catch(err => console.error(err));
