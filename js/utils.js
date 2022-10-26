@@ -58,3 +58,11 @@ export function renderWithTemplate(template, parent, data, callback) {
     const urlParams = new URLSearchParams(queryString);
     return urlParams.get(param);
   }
+
+  export function sleep(milliseconds) {
+    const date = Date.now();
+    let currentDate = null;
+    do {
+      currentDate = Date.now();
+    } while (currentDate - date < milliseconds);
+  }

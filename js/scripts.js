@@ -1,4 +1,4 @@
-import { getParam } from "./utils.js";
+import { getParam, sleep } from "./utils.js";
 
 
 let hotelData = {};
@@ -46,6 +46,8 @@ function redirectToReservation(){
 
 function getHotelDetailInfo(hotelID){
   //'https://hotels4.p.rapidapi.com/locations/v3/search?q=new%20york&locale=en_US&langid=1033&siteid=300000001'
+  
+  sleep(300);
   let hName = '';
   const options = {
     method: 'GET',
