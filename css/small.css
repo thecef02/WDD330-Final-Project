@@ -367,14 +367,16 @@ header nav ul.open {display: block;}
     border-radius: 3px;
 }
 .bed-button{
-    margin: 1rem .2rem;
+    margin: 1rem;
     background-color: #2f4858;
     padding: .6rem 1.8rem;
     color: #fef19a;
     border-radius: 10px;
     
 }
-
+.bed-button:hover{
+    cursor: pointer;
+}
 .bed-para{
     font-size: 14px;
     margin: 0 .3rem;

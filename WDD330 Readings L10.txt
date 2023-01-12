@@ -1,0 +1,41 @@
+ An Introduction to Functions, Execution Context and the Call Stack
+    Every time JS execute the code, it will parsel line by line.
+    And store variables in memory, this is call a treathed executetion.
+    JS do store functions in memory and it is not executed until it is been called.
+    the process of going line by line, the declaration of the variables in memory is called execution context.
+    JS start the context at the global level, it creades an enviroment at that level. The Global enviroment.
+    Because JS go line by line, it is called synchronous and single threaded.
+    Funtion is a way to wrap code and label it for later calls.
+    Once a function is called, it will be in a it own local execution context.
+    The way that JS know where all the functions are and how are they store, that structure it is called the call Stack
+
+ How to Understand Callbacks & Higher Order Functions
+    The principle of making a function reusable is the esence of why we have higher order functions.
+    We could generalize our function so that we pass in our specific instruction only when we run the function.
+    A function can be pass as an argument and it can be call from the inside of that function with the new name.
+    Functions in JS = first class objects
+    They can co-exist with and can be treathed like any other JS object.
+      Assigned to variables and properties of other objects.
+      Passed as arguments into functions.
+      Returned as values from functions.
+    Functions have one special propertie that objects don't have, they can be invoked.
+    The baby function that is parsed in it is call a callback function.
+    The function that receive a function it is call a higher order function.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

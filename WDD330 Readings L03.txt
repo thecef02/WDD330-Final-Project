@@ -1,0 +1,73 @@
+L03: Readings
+The Window Object
+  The Browser Object Model
+	Collection of properties and methods that contain information about the browser and computer screen. "window" object	
+	window.alert(), window.prompt()
+	Keep in mind that most browsers allow users to disable any dialogs from repeatedly appearing, meaning they are not a feature to be relied upon.
+  Browser information
+	Provide information about the user’s browser, and operating system being used.
+	It can be modified by a user to masquerade as a different browser.
+	window.location:  Is an object that contains information about the URL of the current page. 
+	window.location.href, window.location.host, window.location.hostname, /port/
+	window.location.pathname: returns a string of the path that follows the domain.
+	window.location.search: returns a string that starts with a “?"
+	window.location.assign('https://www.sitepoint.com/'): can be used to load another resource from a URL provided as a parameter.
+
+  Browser history
+	window.history: can be used to access information about any previously visited pages.
+	window.history.length: shows how many pages have been visited before arriving at the current page.
+	window.history.go(): can be used to go to a specific page, where 0 is the current page.
+	.forward(), .back()
+	window.open(): takes the URL of the page to be opened as its first parameter.
+	window.moveTo(): takes two parameters that are the X and Y coordinates of the screen that the window is to be moved to.
+	window.resizeTo(600,400);
+
+Screen Information
+	window.screen: contains information about the screen the browser is displayed on.
+	Height, availHeight, Width
+	It also allows you to do things like turn off the device’s screen, detect a change in its orientation or lock it in a specific orientation.
+	
+  Cookies
+  	Browser does not remember anything from one request to another.
+	Cookies can be used for personalizing a user’s browsing experience, storing user preferences, keeping track of user choices (such as a shopping cart), authentication and tracking users.
+	Is starting to be replaced in many cases by the new HTML5 localStorage API as it allows more data to be stored.
+	Cookies can be made persistent ― that is, lasting beyond the browser session ― by adding "; expires=date"
+
+  Timing functions
+	window.setTimeout( () => alert("Time's Up!"), 3000); It should show an alert dialog after three seconds
+	IMPORTANT! The window.setInterval() method works in a similar way to window.setTimeout(), except that it will repeatedly invoke the callback function after every given number of milliseconds.
+	const summon = window.setInterval(chant,1000);
+	setInterval( () => {
+		......;
+		......
+		}, 1000/60)
+	To stop this, we can use the window.clearInterval() method and the variable repeat as an argument (this is because the window.setInterval() method returns its ID, so this will be assigned to the variable repeat):
+
+
+
+The Content Template element
+
+	The <template> HTML element is a mechanism for holding HTML that is not to be rendered immediately when a page is loaded.
+	template element with the shadowroot attribute is detected by the HTML parser and immediately applied as the shadow root of its parent element.
+	Note that directly using the value of the content property could lead to unexpected behavior
+		const container = document.getElementById("container");
+		const template = document.getElementById("template");
+		function clickHandler(event) {
+		event.target.append(" — Clicked this div");	}
+		const firstClone = template.content.cloneNode(true);
+		firstClone.addEventListener("click", clickHandler);
+		container.appendChild(firstClone);
+		const secondClone = template.content.firstElementChild.cloneNode(true);
+		secondClone.addEventListener("click", clickHandler);
+		container.appendChild(secondClone);
+	firstClone is a DocumentFragment instance, so while it gets appended inside the container as expected, clicking on it does not trigger the click event.
+	secondClone is an HTMLDivElement instance, clicking on it works as one would expect.
+
+
+
+
+
+
+
+
+

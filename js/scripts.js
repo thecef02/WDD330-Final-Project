@@ -1,4 +1,4 @@
-import { getParam } from "./utils.js";
+import { getParam, sleep } from "./utils.js";
 
 
 let hotelData = {};
@@ -46,13 +46,24 @@ function redirectToReservation(){
 
 function getHotelDetailInfo(hotelID){
   //'https://hotels4.p.rapidapi.com/locations/v3/search?q=new%20york&locale=en_US&langid=1033&siteid=300000001'
+  
+  sleep(300);
   let hName = '';
   const options = {
     method: 'GET',
     headers: {
+<<<<<<< HEAD
         // 'X-RapidAPI-Key': '5c80726bacmsha4026533a6e64d3p14eef0jsn0eb1adbcc357',
         // 'X-RapidAPI-Key': '6931d989ffmsh118bed85a85a6c4p176f43jsn2b460f96d581',
         'X-RapidAPI-Key': '04f2322d57msh40214398878f730p1baf7bjsnba45fd962457',
+=======
+
+      'X-RapidAPI-Key': '5c80726bacmsha4026533a6e64d3p14eef0jsn0eb1adbcc357',
+    
+        //'X-RapidAPI-Key': '5c80726bacmsha4026533a6e64d3p14eef0jsn0eb1adbcc357',
+        //'X-RapidAPI-Key': '6931d989ffmsh118bed85a85a6c4p176f43jsn2b460f96d581',
+        //'X-RapidAPI-Key': '04f2322d57msh40214398878f730p1baf7bjsnba45fd962457',
+>>>>>>> ee8bb0c13bcd604f84ad4cf93f45d65fa439f133
         //mia
         //'X-RapidAPI-Key': '7dc985f0bemsh074067a14f3282bp131014jsn8d3feb7f0864',
         //thecef02
@@ -71,7 +82,6 @@ function getHotelDetailInfo(hotelID){
         const html = `<option value="${hotelID}">${hName}</option>\n`;
         destinationSelect.innerHTML += html;
       };
-      
     })
     
     .catch(err => console.error(err));

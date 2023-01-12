@@ -1,0 +1,101 @@
+L04: Readings
+
+Testing and Debugging
+  
+  Errors, Exceptions, and Warnings
+    Incorrect syntax, faulty logic or entered data incorrectly.
+    Programmer errors are our responsibility, we should predicting any possible interactions that may throw an error.
+    The program should be designed in a way that prevents the user from making the error.
+    An exception is an error that produces a return value
+    Stack Traces is a sequence of functions or method calls that lead to the point where the error occurred. It will work backwards from the point at which the error occurred to identify the origin.
+    If a warning occurs, the JavaScript will continue to run (although possibly incorrectly).
+
+  The Importance of Testing and Debugging
+    The error might give unexpected or incorrect results that nobody spots, or lurk in the background.
+    A ninja programmer should try to make the code fail gracefully, make sure exceptions are caught and dealt with, and code is tested rigorously.
+
+  Strict Mode
+    Writing code in strict mode can also help improve its clarity and speed, will throw exceptions if any sloppy code.
+    IMPORTANT! Strict mode simply requires this in the first line.
+        'use strict';
+        You can even use strict mode on a per-function basis, and it will be applied only to that function.
+    Lint can be used to test the quality of JavaScript code
+    Linting tools are also useful for enforcing a programming style guide. 
+  
+  Feature Detection
+    Feature detection guarantees that the method is only called if it actually exists and fails gracefully, without any exceptions being thrown.
+
+  Debugging in the Browser
+    Breakpoints halt the progress of the code and allow us to view the value of different variables.
+    console object that provides a number of methods for logging information and debugging.
+    debugger keyword will create a breakpoint in your code that will pause the execution of the code, the browser's debugging tool will automatically kick in and you'll be able see the value of the age variable by hovering over it.
+    Remember to remove any references to the debugger command.
+
+  Error Objects
+    All error objects have a number of properties, but they’re often used inconsistently across browsers.
+  
+  Throwing Exceptions
+    Are thrown automatically by the JavaScript engine when an error occurs.
+    It is best practice, however, to throw an error object. This can then be caught in a catch block.
+
+  Exception Handling
+    When an exception occurs, the program terminates with an error message.
+    Wrap it in a try/catch block.
+    finally keyword will always be executed after the try or catch block.
+  
+  Tests
+    The next step is to write some code to make the tests pass.
+    Test-driven development is the practice of writing tests that fail, then writing the code that passes the test, then refactoring the code every time a new feature is implemented.
+
+
+How Single-Page Applications Work
+    Is a website that re-renders its content in response to navigation actions, most rely on the same browser behavior and native APIs to enable the core functionality.
+    anyone opening that link will see the same thing as you because the location is always updating
+    Single-page application generally rely on a router.
+
+  Location Primer
+    Properties are important: pathname, hash, and search.
+
+  Route Matching
+    Routes describe the location that they should match. (Static or dynamic)
+
+  How Browsers Handle Locations
+    An array of location entries.
+    The browsing context also keeps track of which entry is currently active.
+
+  The History API
+    The History API was developed to add first-class support for single-page applications.
+    API re-uses the active Document by updating it to reflect the new location.
+      history.pushState(null, '', '/next-location');
+      history.replaceState(null, '', '/replace-location');
+      https://developer.mozilla.org/en-US/docs/Web/API/History_API
+      https://developer.mozilla.org/en-US/docs/Web/API/Location     
+
+
+The problem with single page apps
+
+  We over-complicate this
+    serve all of the code for an entire multi-UI app from a single index.html file.
+    more code to maintain, more complexity to manage, and more things to break.
+    list-maker.com/settings/index.html vs list-maker.com/settings.html
+
+The HTML5 template element.
+    It's essentially mandatory on the client side if you're writing a single-page application.
+    Is almost always done using templating library or application framework.
+    It provides an easy way to define a reusable fragment of HTML.
+    <template> tag gets parsed just like regular HTML. -scripts, -style.
+    It doesn't load any external resources.
+    It can be accessed as a DocumentFragment.
+    We have to provide an API for manipulating their contents.
+    Faster that manipulating an element's innerHTML.
+    The most important thing here is the call to the cloneNode method. It creates a completely new DocumentFragment instance.
+    You can easily do complex flow-control using loops, conditionals, and even try/catch statements.
+    We can nest HTML templates.
+    5-25% smaller.
+    Can I use?   https://caniuse.com/template
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+Get Started with JSON Web Tokens
+  JSON Web Token (JWT) is an open standard that defines a securely transmitting information.
+    Compact. Due to its size its transmission is fast.
+    Self-contained. Contains all the required information, avoiding querying the database more than once.
+    Authentication. Once the user is logged in, each subsequent request will include the JWT, allowing the user to access routes, services, and resources.
+    Information Exchange. securely transmitting information. You can also verify that the content hasn’t changed.
+  JWTs consist of three parts separated by dots (.), which are:
+    Header. hashing algorithm such as HMAC SHA256 or RSA.
+    Payload. Contains the claims or statements about an entity.
+        Reserved claims: predefined claims, not mandatory but recommended. iss (issuer), exp (expiration time), sub (subject), aud (audience)
+        Public claims:
+        Private claims:
+    The payload is then Base64Url encoded to form the second part of the JWT.
+
+  Signature
+    Since tokens are credentials, great care must be taken to prevent security issues.
+    It doesn’t matter which domains are serving your APIs, as Cross-Origin Resource Sharing (CORS) won’t be an issue as it doesn’t use cookies.
+    The content of the header should look like the following.
+    Authorization: Bearer <token>  it is a stateless authentication mechanism as the user state is never saved in the server memory. Never saved in the server memory.
+    Reduce the need of going back and forward to the database. Doesn’t use cookies.
+    Size is smaller and makes JWT more compact than SAML.
+    Signature without introducing obscure security holes is very difficult compared to the simplicity of signing JSON.
+    JSON parsers map directly to objects
+    We also use JWTs to perform authentication and authorization in Auth0’s API v2
+    JSON Web Tokens allow granular security.
+
+Develop, Debug, Learn?
+  It is all done in the browser.
+  We use other peoples code to build our own and create bigger things. Some time this is a problem because the debugging is in third party companies.
+  Our purpose is to build things to allow people to do things. 
+  It is about the end user.
+  We hope and relly on the framwork we use to have all the things build in.
+  Use break points insted of console.loc().
+  Context switching is mentally exhausting. Jamping from program to program.
+  It is time to rething about toolings, the tool we develop should prevent us from doing things wrong instead of paching up what we created.
+  
+
+
+
+
+
+
+

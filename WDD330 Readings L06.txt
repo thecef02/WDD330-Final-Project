@@ -1,0 +1,111 @@
+Forms
+    A method of interacting with a web page. 
+    <form> element that contains form controls such as input fields
+    When a form was submitted, it would be sent to a server where the information would be processed using a 'back end' language 
+    Search element:
+      by collection     const form = document.forms[0];
+      by name attibute  const form = document.forms.search;   or   const form = document.forms['search'];
+      by tagname        const form = document.getElementsByTagname('form')[0];
+    elements method returns an HTML collection of all the elements contained in the form.
+    We can also access the form with the name attributes
+      const input = form.searchInput;   or   const input = form['searchInput']
+  
+  Form Properties and Methods    
+    form.submit() submit the form automatically. Or <button type='submit'>.
+    form.reset() reset all the form controls back to their initial values. Or <button type='reset'>.
+    form.action set the action attribute of a form.
+    preventDefault() stop the form from being submitted to that URL.
+
+  Form Events
+    focus event occurs when an element is focused on.
+    blur event occurs when the user moves the focus away from the form element.
+    change event occurs when the user moves the focus away from the form element after changing it. 
+    submit event, occurring when the form is submitted.
+    New Attributes in HTML5
+      autofocus attribute give focus to this element
+      placeholder attribute will insert the value provided in the input field until the user enters some text.
+      maxlength attribute will limit the number of characters
+    JSON.stringify() method to convert the hero object into a JSON string
+
+  Text Input Fields
+    input type='password' is used to enter passwords or secret information.
+    value attribute, initial value of this field can be set in the HTML.
+    input fields with type='checkbox' allow users to check an option as true. Returns the boolean values.
+    input fields with type='radio' provide an exclusive choice of options.
+    type='hidden'. These are not displayed by the browser, but have a 'value' attribute.
+    type='file'. These are used to upload files.
+    drop-down lists can be used to select one or more options
+    selectedIndex property find out the index of the option that has been selected.
+    A <textarea> element is used to enter long pieces of text over multiple lines such as a comment or blog post. 
+  Form Validation
+    Form validation is the process of checking whether a user has entered the information into a form correctly.   
+    Validation can occur on the client side using JavaScript, and on the server side.
+    JavaScript should not be relied upon to validate any data before it’s saved to a database.
+    This should then be backed up with more validation performed on the server before the data is eventually saved
+    add a 'required' attribute to that field and the browser will take care of the rest.
+    It is also possible to implement custom form validation using JavaScript.
+    It would make sense to write some more generic addError() and removeError() functions to deal with the different types of validation you might want to apply to the various elements in a form.
+
+Using FormData Objects Effectively
+    https://www.youtube.com/watch?v=GWJhE7Licjs&ab_channel=SteveGriffith-Prof3ssorSt3v3
+    To work inside of the formData object we have to have a "name" attibute.
+    Every time we want to use JavaScript to hadle the form and we don't want the page to automatically reload the form we need to add preventDefault() onto the event.
+    We can send the information as a form data or as a JSON (there is a convertion funtion on the video), or as string with stringify().
+    We have to tell the server what type of data we are sending.
+
+MDN: Client-Side Form Validation
+    https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation
+    Client-side validation is an initial check and an important feature of good user experience
+    If rejected, a noticeable delay is caused by a round trip
+    the browser and/or the web server will check to see that the data is in the correct format and within the constraints
+      We want to get the right data, in the right format.
+      We want to protect our users' data.
+      We want to protect ourselves.
+  Two different types of client-side validation
+    Built-in form validation uses HTML form validation features
+    JavaScript validation is coded using JavaScript.
+    validate most user data without relying on JavaScript.
+    required, minlength, maxlength, min, max, pattern.
+    when true, :valid CSS pseudo-class will apply style.
+    if :invalid CSS pseudo-class is true we need to apply specific styles.
+      input:invalid:required {
+        background-image: linear-gradient(to right, pink, lightgreen); }
+    example: https://mdn.github.io/learning-area/html/forms/form-validation/fruit-required.html
+  Validating against a regular expression
+    a — Matches one character that is a (not b, not aa, and so on).
+    abc — Matches a, followed by b, followed by c.
+    ab?c—Matches a, optionally followed by a single b, followed by c. (ac or abc)
+    ab*c—Matches a, optionally followed by any number of bs, followed by c. (ac, abc, abbbbbc, and so on).
+    a|b — Matches one character that is a or b.
+    abc|xyz — Matches exactly abc or exactly xyz (but not abcxyz or a or y, and so on).
+  Constraining the values of your entries
+    https://mdn.github.io/learning-area/html/forms/form-validation/fruit-length.html
+    <input type="number"> (and other types, such as range and date) 
+    Validation-related attributes 
+    https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/Constraint_validation#validation-related_attributes
+  The Constraint Validation API
+    HTMLButtonElement (represents a <button> element)
+    HTMLFieldSetElement (represents a <fieldset> element)
+    HTMLInputElement (represents an <input> element)
+    HTMLOutputElement (represents an <output> element)
+    HTMLSelectElement (represents a <select> element)
+    HTMLTextAreaElement (represents a <textarea> element)
+    patternMismatch: Returns true if the value does not match the specified pattern
+    tooLong: Returns true if the value is longer than the maximum length specified
+    rangeOverflow: Returns true if the value is greater than the maximum specified by the max attribute
+    checkValidity(): Returns true if the element's value has no validity problems
+    reportValidity(): Reports invalid field(s) using events.
+    combined with preventDefault() in an onSubmit event handler
+    setCustomValidity(message): Adds a custom error message to the element
+    setting the novalidate attribute on the form is what stops the form from showing its own error message bubbles
+  Validating forms without a built-in API
+    need to determine how to validate your data: string operations, type conversion, regular expressions, and so on.
+    It's very important to provide as much helpful information as possible in order to guide them in correcting their inputs.
+    Offer up-front suggestions
+    If you want to customize styling and error messages, but it always requires you to think carefully about the user. 
+    Always remember to help your users correct the data they provide. To that end, be sure to:
+      Display explicit error messages.
+      Be permissive about the input format.
+      Point out exactly where the error occurs, especially on large forms.
+
+

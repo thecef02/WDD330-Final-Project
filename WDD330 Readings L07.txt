@@ -1,0 +1,89 @@
+Further Functions
+    Functions are first-class objects, they can be passed as every other value.
+  
+  Function Properties and Methods
+    Functions can have properties and methods themselves.
+    All functions have a length property that returns the number of parameters the function has.
+  Call and Apply Methods
+    The call() method can be used to set the value of this.
+        const clark = { name: 'Clark' };
+        sayHello.call(clark);
+        function sayHello(){
+            return `Hello, my name is ${ this.name }`;    }
+    The first argument is always the 'this' 
+        function sayHello(greeting='Hello'){
+            return `${ greeting }, my name is ${ this.name }`;}
+        sayHello.call(clark, 'How do you do');
+    You need provide null as its first argument if a function doesn’t refer to an object as this.
+    For the apply() method the arguments of the function are provided as an array.
+        square.apply(null, [4])
+    They allow generalized functions to be written that are not tied to specific objects.
+  Memoization
+    If a computation take a long time, we can save the value in a cache instead of computing the result once again.
+        function square(x){
+            square.cache[x] = x*x;}
+  Immediately Invoked Function Expressions  IIFE
+    An anonymous function that is invoked as soon as it’s defined. It is made into an expression, by placing the whole declaration inside parentheses.
+    Placing any code that uses the temporary variable inside an IIFE will ensure it’s only available while the IIFE is invoked.
+  Initialization Code
+    An IIFE will be invoked once, and can set up any variables, objects and event handlers.
+    Variables have block scope when const or let are used.
+    A function can be redefined itself.
+    Any properties will be lost when the function redefines itself.
+  Recursive Functions
+    Is one that invokes itself until a certain condition is met.
+  Callbacks
+    They’re functions passed to other functions as arguments and then invoked inside the function they are passed to.
+    Can be used to facilitate event-driven asynchronous programming.
+  Promises 
+    It calls an asynchronous operation, It remains unsettled until finish successfully or not, but in bold cases it returns something.
+    They are created using a constructor function. 
+    The executor initializes the promise and starts the asynchronous operation.
+        resolve() if succesful.
+        reject() if not.
+    We can chain the then() methods together. Each promise will only begin once the previous promise has been settled.
+  Closures  
+    A closure is a reference to a variable that was created inside the scope of another function.
+    'inner' function, and has full access to all of the variables declared inside the scope of the function in which it’s declared.
+  Generators
+    These are special functions used to produce iterators that maintain the state of a value.
+    It returns a Generator object that can be used to create an iterator that implements a next() method.
+    Functions employ the special yield keyword that is used to return a value.
+    To define a generator function, an asterisk symbol (*) is placed after the function declaration.
+  Functional Programming
+    Is a programming paradigm as OOP.
+  Currying 
+    Involves the partial application of functions.
+    Not all arguments have been supplied to the function.
+    higher-order functions that are able to return partially applied functions.
+    higher-order functions because they return a function
+
+CSS3 Transforms and Transitions
+  Transforms
+    The value of the transform property is one or more transform functions (separated by spaces) that will be applied in the order they’re provided. 
+    The translate(x,y) function moves an element x from the left, and y from the top:
+        transform: translate(45px, -45px);    -   transform: translateX(45px);     -    transform: translateY(-30px);
+    Transforms don’t work on inline elements.
+    ->  display: inline-block; is required.
+  Scaling
+    transform: scale(1.5, 0.25);
+    As with translate, you can also use the scaleX(x) or scaleY(y) functions. 
+    Has no impact on the document flow. If you scale inline-block elements, text around it will fail to accommodate it with reflowing. 
+        transform: translateX(40px) scale(1.5);
+  Rotation
+    The rotate() function rotates an element around the point of origin by a specified angle value.
+      transform: rotate(10deg) translateX(40px) scale(1.5);
+  Skew
+    The skew(x,y) function specifies a skew along the x and y axes. 
+        transform: skew(15deg, 4deg);
+    The order of transform functions does matter
+    your translate direction will be on the rotated axis.
+  Transitions
+
+
+
+
+
+
+
+

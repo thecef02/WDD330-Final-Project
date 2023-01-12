@@ -1,0 +1,14 @@
+Github
+  git branch: show all branches.
+  git checkout <branchName>: switch to a specific branch.
+  git branch <new_branch>: create a new branch.
+  git checkout -b ＜new-branch＞: create a new branch and move to it.
+  
+
+
+
+
+
+
+
+

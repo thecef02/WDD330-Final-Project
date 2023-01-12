@@ -1,0 +1,78 @@
+Ajax
+  Clients and Servers
+    Ajax allows JavaScript to request resources from a server on behalf of the client. 
+    Set up a local development server on your own computer, or request the files from an external website that uses cross-origin resource sharing (CORS).
+    A server is required when requesting resources using Ajax.
+    This policy is to stop any malicious JavaScript being run from an external source.
+    Cross-origin resource sharing (CORS) is a solution to this problem as it allows resources to be requested from another website outside the original domain.
+  
+  Asynchronous JavaScript and XML
+    Asynchronous
+     The program doesn’t have to stop and wait for the response.
+     Programs are able to run in an efficient way, avoiding lag as data is transferred by using callbacks.
+    JavaScript
+     Ajax enabled JavaScript to send requests and receive responses from a server, allowing content to be updated in real time.
+    XML
+     by far the most commonly used in Ajax nowadays is JSON
+     JSON also has the advantage of being natively supported in JavaScript
+     Now users could see new content on web pages without having to refresh the page.
+     Partial page content could be loaded seamlessly.
+  
+  The Fetch API
+        fetch('https://example.com/data')
+        .then( // code that handles the response )
+        .catch( // code that runs if the server returns an error )
+    fetch() method returns a promise that resolves to the response returned from the URL
+  Response Interface
+    The ok property will return true if the status property is between 200 and 299.
+    Status property, will be 200 if the response was successful.
+    We can use an if block to check if the request was successful.
+        const url = 'https:example.com/data';
+        fetch(url)
+        .then((response) => {
+            if(response.ok) {
+                return response;
+            }
+            throw Error(response.statusText);
+        })
+        .then( response => // do something with response )
+        .catch( error => console.log('There was an error!') )
+    
+    headers – A Headers object (see later section) containing any headers associated with the response.
+    url – A string containing the URL of response.
+    redirected – A boolean value that specifies if the response is the result of a redirect.
+    type – A string value of 'basic', 'cors', 'error' or 'opaque'. A value of 'basic' is used for a response from the same domain.
+
+    The redirect() method can be used to redirect to another URL.
+        .then( response => response.redirect(newURL)); // redirects to another URL
+    The blob() method is used to read a file of raw data, such as an image or a spreadsheet. 
+        .then( response => response.blob() ); // transforms the data into a blob object
+    The blob() method to return a blob object.
+    The json() method is used to deal with these by transforming a stream of JSON data into a promise that resolves to a JavaScript object.
+
+  Hypertext Transfer Protocol
+    GET requests to retrieve resources
+    POST requests, usually used to create a resource but can actually perform any task
+    PUT requests to upsert, which means insert a resource or update it entirely
+    PATCH requests to make partial updates to a resource
+    DELETE requests to delete a resources.
+        const request = new Request('https://example.com/data', {
+            method: 'GET',
+            mode: 'cors',
+            redirect: 'follow',
+            cache: 'no-cache'
+        });
+  Headers Interface
+    HTTP headers are used to pass on any additional information.
+    Includes the file-type of the resource, cookie information, authentication information and when the resource was last modified.
+    Headers interface can be used to create a Headers object, which can then be added as a property of Request.
+        const headers = new Headers();
+    or  
+        const headers = new Headers({ 'Content-Type': 'text/plain', 'Accept-Charset' : 'utf-8', 'Accept-Encoding':'gzip,deflate' })
+
+    The jQuery library is a good option, it has the generic ajax() method that can be used in a very similar way to the fetch() method. 
+        $.ajax('http://numbersapi.com/random')
+        .done(text => outputDiv.innerHTML = text );
+
+
+

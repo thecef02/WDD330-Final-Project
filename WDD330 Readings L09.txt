@@ -1,0 +1,170 @@
+HTML5
+  The data- Attribute
+    The data- attribute is a way of embedding data in a web page using custom attributes that are ignored by the browser.
+    The information contained in the attributes can be used to identify particular elements.
+    The values of the attributes can also be used to filter different elements.
+        <div id='hero' data-powers='flight superSpeed'>
+            Superman
+        </div>
+        const superman = document.getElementById('hero');
+        const powers = superman.dataset.powers;
+        << 'flight superSpeed'
+    Notice that the data- prefix is dropped. To access the attribute, powers.
+    The HTML5 specification contains a number of APIs that help to gain access to hardware, and control new features that appear in the latest devices.
+    It’s still best practice to use feature detection before using any of the API methods.
+        localStorage.setItem('name', 'Walter White');
+        localStorage.getItem('name'); 
+        << "Walter White"
+        localStorage.removeItem('name');
+        localStorage.clear();
+        localStorage.setItem('superman', JSON.stringify(hero); save JSON as text
+    If geolocation is available, it will return a position object to a specified callback function.
+        navigator.geolocation.getCurrentPosition(youAreHere);
+        function youAreHere(position) {
+            console.log(`Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`); }
+        position.speed .altitude .heading .timestamp
+    JavaScript is a single-threaded language, only one process can run at one time.
+    Websocket is a new protocol that allows two-way communication with a server – also known as push messaging. This means that a connection is kept open and responses are ‘pushed’ to the client as soon as they are received.
+    The Notification API allows you to show messages using the system's notifications. 
+        if(window.Notification) {
+            Notification.requestPermission()
+            .then((permission) => {
+                if(Notification.permission === 'granted') {
+                new Notification('Hello JavaScript!');           }           });        }
+
+        const notification = new Notification('JavaScript: Novice to Ninja',{
+            body: 'The new book from SitePoint',
+            icon: 'sitepointlogo.png'        });
+    You could open a new window when the user clicked on the notification using the following code:
+        notification.addEventListener('click', () => {
+        window.open('https://sitepoint.com')
+        }, false);
+    HTML5 introduced the <audio> and <video> tags used to insert audio and video clips into a web page.
+        video.addEventListener('loadedmetadata', () => { console.log(video.duration); });
+        Audio and video clips also have a number of events that will fire when they occur, including:
+        The play event, which fires when the clip starts and when it resumes after a pause.
+        The pause event, which fires when the clip is paused.
+        The volumechange event, which fires when the volume is changed.
+        The loadedmetadata event, which we saw in the note above, and which fires when all the video's metadata has loaded.
+    The canvas element was introduced to allow graphics to be drawn onto a web page in real time using JavaScript.
+    These are libraries of code that allow you to use the APIs as usual. They then fill in the necessary code that's not provided natively by the user’s browser.
+    The terms shim and polyfill are often used interchangeably. 
+    The main difference between them is that a shim is a piece of code that adds some missing functionality to a browser, although the implementation method may differ slightly from the standard API. 
+    A polyfill is a shim that achieves the same functionality, while also using the API commands that would be used if the feature was supported natively.
+
+
+Canvas
+  With HTML5’s Canvas API, we can draw anything we can imagine, all through JavaScript.
+  We can draw shapes and lines, arcs and text, gradients and patterns.
+  why not set the width and height via CSS? width and height attributes determine how large the canvas’s coordinate system is. The CSS properties will simply determine how large the box is that displays the image.
+    var canvas = document.getElementById("myCanvas");
+    var context = canvas.getContext("2d");
+    context.strokeStyle = "red";
+    context.fillStyle = "rgba(0, 0, 255, 0.5)";
+    context.fillRect(10, 10, 100, 100);   
+    context.strokeRect(10, 10, 100, 100);
+  (0,0) in top, left.
+  To create a gradient that begins at the top of the canvas and blends the color down to the bottom
+    function drawGradient() {
+        var canvas = document.getElementById("demo3");
+        var context = canvas.getContext("2d");
+        context.strokeStyle = "red";
+        var gradient = context.createLinearGradient(0, 0, 0, 200);     }
+    OTHER DRAWINGS and examples.
+        function drawCircle(canvas) {
+            var context = canvas.getContext("2d");
+            context.beginPath();}
+
+        function drawCircle(canvas) {
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.beginPath();
+            context.arc(50, 50, 30, 0, Math.PI*2, true);}
+
+        var button = document.getElementById("saveButton");
+        button.addEventListener("click", saveDrawing, false);
+        function saveDrawing() {
+            var canvas5 = document.getElementById("demo5");
+            window.open(canvas5.toDataURL("image/png"));}
+
+        function manipulateImage() {
+            var canvas = document.getElementById("demo7");
+            var context = canvas.getContext("2d");
+            var image = document.getElementById("secondImage");
+            context.drawImage(image, 68, 68);
+
+            var imageData = context.getImageData(0, 0, 200, 200);
+            
+            var red, green, blue, greyscale;
+            
+            for (var i = 0; i < imageData.data.length; i += 4) {
+            red = imageData.data[i];
+            green = imageData.data[i + 1];
+            blue = imageData.data[i + 2];            }        }
+
+    putImageData. This method does exactly what you’d expect: it takes an image's data and writes it onto the canvas.
+        function manipulateImage() {
+            var canvas = document.getElementById("demo7");
+            var context = canvas.getContext("2d");
+            var image = document.getElementById("secondImage");
+            context.drawImage(image, 60, 60);
+
+            var imageData = context.getImageData(0, 0, 200, 200);
+            
+            for (var i = 0; i < imageData.data.length; i += 4) {
+            var red = imageData.data[i];
+            var green = imageData.data[i + 1];
+            var blue = imageData.data[i + 2];
+                
+            var grayscale = red * 0.3 + green * 0.59 + blue * 0.11;
+                
+            imageData.data[i] = grayscale;
+            imageData.data[i + 1] = grayscale;
+            imageData.data[i + 2] = grayscale;
+            } 
+            context.putImageData(imageData, 0, 0);        }
+
+    To make a video B&W
+        function makeVideoOldTimey() {
+            var video = document.getElementById("video");
+            var canvas = document.getElementById("canvasOverlay");
+            var context = canvas.getContext("2d");    }
+
+        function makeVideoOldTimey() {
+            var video = document.getElementById("video");
+            var canvas = document.getElementById("canvasOverlay");
+            var context = canvas.getContext("2d");
+
+            video.addEventListener("play", function() { 
+            draw(video,context,canvas);               
+            }, false); }
+
+SVG
+  SVG stands for Scalable Vector Graphics, a specific file format that allows you to describe vector graphics using XML.
+  Vector images preserve their quality even as you blow them up or shrink them down. 
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+        <circle cx="50" cy="50" r="25" fill="red"/>
+    </svg>
+  The viewBox attribute defines the starting location, width, and height of the SVG image.
+  The circle element defines a circle, with cx and cy the X and Y coordinates of the center of the circle. The radius is represented by r, while fill defines the fill style.  
+  Unfortunately, it’s not always this easy. If you want to create complex shapes, the code begins to look a little scary.
+  We can use an image editor to help. http://inkscape.org/.
+  Raphaël is an open-source JavaScript library that makes drawing and animating with SVG much easier.
+  Both canvas and SVG allow you to draw custom shapes, paths, and fonts.
+  Canvas allows for pixel manipulation, if you ever want to add more to the canvas, you’re unable to simply add to what’s already there.
+  SVG is accessible via the DOM, because its mode is retained mode, meaning that the structure of the image is preserved in the XML document that describes it.
+  Note that draggable is not a Boolean attribute, so you have to explicitly set it to true.
+  DataTransfer objects are one type of object outlined in the Drag and Drop API.
+  These objects allow us to set and get data about the elements that are being dragged. 
+        mouse.addEventListener("dragstart", function (event) {
+            event.dataTransfer.setData("text/plain", this.id); 
+        });
+
+
+
+
+
+
+
+
+
